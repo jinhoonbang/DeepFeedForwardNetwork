@@ -64,10 +64,10 @@ class SoftMax(object):
         # probability is maximal
         # self.y_pred = T.argmax(self.p_y_given_x, axis=1)
 
-        print("inside softMax")
-        print("self.p_y_given_x.shape.eval()")
-        print(self.p_y_given_x.shape.eval())
-        print("break")
+        # print("inside softMax")
+        # print("self.p_y_given_x.shape.eval()")
+        # print(self.p_y_given_x.shape.eval())
+        # print("break")
 
         self.y_pred = T.dmatrix()
         for i in range(n_symbol):
