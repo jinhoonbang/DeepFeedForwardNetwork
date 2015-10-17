@@ -55,6 +55,7 @@ class SoftMax(object):
             borrow=True
         )
 
+        print("self.b")
         print(self.b.shape.eval())
         print(self.W.shape.eval())
 
@@ -72,7 +73,7 @@ class SoftMax(object):
         print(self.p_y_given_x.shape.eval())
         print("break")
 
-        self.y_pred = T.dmatrix();
+        self.y_pred = T.dmatrix()
         for i in range(n_symbol):
             self.y_pred = T.concatenate([self.y_pred, T.argmax(self.p_y_given_x[:,3*i:3*(i+1)])], axis=1)
 

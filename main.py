@@ -11,6 +11,8 @@ import pandas as pd
 import numpy as np
 from src.algorithms.SGD4FFN import SGD4FFN as SGD4FFN
 
+theano.config.exception_verbosity = 'high'
+
 params = dict(
     dataset = glob.glob('/home/jbang/data/smallHybrid/*'),
     hiddenLayers = [500, 300],

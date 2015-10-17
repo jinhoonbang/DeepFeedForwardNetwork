@@ -39,9 +39,6 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
     n_train_batches = int(train_set_x.get_value(borrow=True).shape[0] / batch_size)
     n_valid_batches = int(valid_set_x.get_value(borrow=True).shape[0] / batch_size)
     n_test_batches = int(test_set_x.get_value(borrow=True).shape[0] / batch_size)
-    print(n_train_batches)
-    print(type(n_train_batches))
-    print(range(n_train_batches))
     ######################
     # BUILD ACTUAL MODEL #
     ######################
