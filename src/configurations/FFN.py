@@ -63,6 +63,8 @@ class FFN(object):
             n_in=layers_hidden[-1],
             n_out=n_out
         )
+        print(self.hiddenLayers[-1].output.shape)
+        print(self.hiddenLayers[-1].output.shape.eval())
 
         # L1 norm ; one regularization option is to enforce L1 norm to be small
         l1reg = abs(self.logRegressionLayer.W).sum()
