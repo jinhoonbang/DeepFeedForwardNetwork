@@ -56,6 +56,9 @@ class FFN(object):
             n_input = n_hidden
             previous_output = new_layer.output
             self.hiddenLayers.append(new_layer)
+            print("inside FFN for loop")
+            print(new_layer.input.shape)
+            print(new_layer.input.shape.eval())
 
         # The logistic regression (softmax) layer
         self.logRegressionLayer = SoftMax(
@@ -63,6 +66,7 @@ class FFN(object):
             n_in=layers_hidden[-1],
             n_out=n_out
         )
+        print("inside FFN")
         print(self.hiddenLayers[-1].output.shape)
         print(self.hiddenLayers[-1].output.shape.eval())
 
