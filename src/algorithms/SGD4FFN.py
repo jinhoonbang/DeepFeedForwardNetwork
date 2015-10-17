@@ -1,9 +1,6 @@
-__author__ = 'diego'
-
 import os
 import sys
 import timeit
-
 import numpy
 import theano
 import theano.tensor as T
@@ -42,7 +39,8 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
     n_train_batches = train_set_x.get_value(borrow=True).shape[0] / batch_size
     n_valid_batches = valid_set_x.get_value(borrow=True).shape[0] / batch_size
     n_test_batches = test_set_x.get_value(borrow=True).shape[0] / batch_size
-
+    print(type(n_train_batches))
+    print(range(n_train_batches))
     ######################
     # BUILD ACTUAL MODEL #
     ######################
@@ -50,8 +48,8 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
 
     # allocate symbolic variables for the data
     index = T.lscalar()  # index to a [mini]batch
-    x = T.dmatrix('x')  # the data is presented as rasterized images
-    y = T.imatrix('y')  # the labels are presented as matrix
+    x = T.dmatrix('x')  # the data is presented as matrix
+    y = T.dmatrix('y')  # the labels are presented as matrix
 
     rng = numpy.random.RandomState(1234)
 
