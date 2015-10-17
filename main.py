@@ -1,3 +1,5 @@
+#Jin Hoon Bang
+
 """
 deep feed forward network for Futures from CBOE Futures Exchange
 """
