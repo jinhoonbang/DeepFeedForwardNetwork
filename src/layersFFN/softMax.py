@@ -64,6 +64,13 @@ class SoftMax(object):
         # probability is maximal
         # self.y_pred = T.argmax(self.p_y_given_x, axis=1)
 
+        print("inside softMax")
+        print("self.p_y_given_x.get_value(borrow=True).shape")
+        print(self.p_y_given_x.get_value(borrow=True).shape)
+        print("self.p_y_given_x.shape.eval()")
+        print(self.p_y_given_x.shape.eval())
+        print("break")
+
         self.y_pred = T.dmatrix();
         for i in range(n_symbol):
             self.y_pred = T.concatenate([self.y_pred, T.argmax(self.p_y_given_x[:,3*i:3*(i+1)])], axis=1)
