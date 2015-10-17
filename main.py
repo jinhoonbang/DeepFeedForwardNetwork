@@ -1,9 +1,6 @@
 """
-feed forward network for Futures from CBOE Futures Exchange
+deep feed forward network for Futures from CBOE Futures Exchange
 """
-
-import gzip
-import pickle
 import theano
 import theano.tensor as T
 import numpy
@@ -76,15 +73,7 @@ def trainTestSplit(feature, label):
 def load_data(dataset):
     feature, label = preprocessData(dataset)
     params['n_in'] = feature.shape[1]
-    print("params[n_in]")
-    print(params['n_in'])
     train_set, valid_set, test_set = trainTestSplit(feature, label)
-
-    ''' Loads the dataset
-
-    :type dataset: string
-    :param dataset: the path to the dataset (here MNIST)
-    '''
 
     #############
     # LOAD DATA #
@@ -92,20 +81,9 @@ def load_data(dataset):
 
     print('... loading data')
 
-    # Load the dataset
-
-    # pkl_file = open(dataset, 'rb')
-    # train_set, valid_set, test_set = pickle.load(pkl_file, encoding='bytes')
-    # pkl_file.close()
-
     #train_set, valid_set, test_set format: tuple(input, target)
-    #input is an numpy.ndarray of 2 dimensions (a matrix)
-    #witch row's correspond to an example. target is a
-    #numpy.ndarray of 1 dimensions (vector)) that have the same length as
-    #the number of rows in the input. It should give the target
-    #target to the example with the same index in the input.
-
-
+    #input and target are both numpy.ndarray of 2 dimensions (a matrix)
+    #each row correspond to an example.
 
     def shared_dataset(data_xy, borrow=True):
         """ Function that loads the dataset into shared variables
@@ -142,14 +120,5 @@ def load_data(dataset):
 
 if __name__ == '__main__':
     datasets = load_data(params['dataset'])
-
     SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
-
-
-    # if params['model'] == "actChoice":
-    #     SGD4FFNWithActChoice(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
-    # if params['model'] == "plain":
-    #     SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
-    # if params['model'] == "actOptimization":
-    #     SGD4FFNmultipleActivations(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'],with_projection=params['with_projection'])
 
