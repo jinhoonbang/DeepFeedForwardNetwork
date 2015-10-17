@@ -58,7 +58,7 @@ class SoftMax(object):
         #
         # symbolic description of how to compute prediction as class whose
         # probability is maximal
-        #self.y_pred = T.argmax(self.p_y_given_x, axis=1)
+        self.y_pred = T.argmax(self.p_y_given_x, axis=1)
 
         b1 = T.argmax(self.p_y_given_x[:, 0:3], axis=1)
         b2 = T.argmax(self.p_y_given_x[:, 3:6], axis=1)
@@ -104,7 +104,7 @@ class SoftMax(object):
         b42 = T.argmax(self.p_y_given_x[:, 123:126], axis=1)
         b43 = T.argmax(self.p_y_given_x[:, 126:129], axis=1)
 
-        self.y_pred = T.concatenate([b1, b2 ,b3, b4, b5, b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43], axis=1)
+        #self.y_pred = T.concatenate([b1, b2 ,b3, b4, b5, b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43], axis=1)
 
         # parameters of the model
         self.params = [self.W, self.b]

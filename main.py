@@ -23,9 +23,6 @@ params = dict(
     # model = "plain" # actChoice or plain or actOptimization
 )
 
-print(type(params['batch_size']))
-print("break")
-
 def preprocessData(path):
     files = []
     for file in path:
