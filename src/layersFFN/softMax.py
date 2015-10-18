@@ -139,7 +139,7 @@ class SoftMax(object):
 
         neg_log = 0
         for i in range(0, n_symbol):
-            yindex = T.cast(y[:,i]+3*i+1, 'int64')
+            yindex = T.cast(y[:,i]+3*i+1, 'int32')
             neg_log = neg_log - T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), yindex])
 
         return neg_log
@@ -162,7 +162,7 @@ class SoftMax(object):
         #         ('y', y.type, 'y_pred', self.y_pred.type)
         #     )
         # check if y is of the correct datatype
-        y = T.cast(y, 'int64')
+        y = T.cast(y, 'int32')
         if y.dtype.startswith('int'):
             # the T.neq operator returns a vector of 0s and 1s, where 1
             # represents a mistake in prediction
