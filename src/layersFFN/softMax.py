@@ -62,7 +62,24 @@ class SoftMax(object):
         #
         self.p_y_given_x = T.nnet.softmax(T.dot(input, self.W) + self.b)
         print("p_y")
-        print(self.p_y_given_x)
+        try:
+            print(self.p_y_given_x.eval())
+        except:
+            print("eval failed")
+        try:
+            print(self.p_y_given_x.shape)
+        except:
+            print("shape failed")
+        try:
+            print(self.p_y_given_x.shape.eval())
+        except:
+            print("shape eval failed")
+        try:
+            print(self.p_y_given_x.get_value.shape)
+        except:
+            print("get value shape failed")
+
+
         #
         # symbolic description of how to compute prediction as class whose
         # probability is maximal
