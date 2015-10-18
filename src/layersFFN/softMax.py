@@ -65,18 +65,22 @@ class SoftMax(object):
         print("p_y")
         try:
             print(input.eval())
+            print(self.W.eval())
         except:
             print("eval failed")
         try:
             print(input.shape)
+            print(self.W.shape)
         except:
             print("shape failed")
         try:
             print(input.shape.eval())
+            print(self.W.shape.eval())
         except:
             print("shape eval failed")
         try:
             print(input.get_value.shape)
+            print(self.W.shape.eval())
         except:
             print("get value shape failed")
 
