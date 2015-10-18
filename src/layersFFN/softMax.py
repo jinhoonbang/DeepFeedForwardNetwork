@@ -10,6 +10,7 @@ import numpy
 import theano
 import theano.tensor as T
 from theano.printing import debugprint
+from theano import pp
 
 n_symbol = 43
 
@@ -60,7 +61,7 @@ class SoftMax(object):
         # probabilities
         #
         self.p_y_given_x = T.nnet.softmax(T.dot(input, self.W) + self.b)
-        debugprint(self.p_y_given_x)
+        pp(self.p_y_given_x)
         #
         # symbolic description of how to compute prediction as class whose
         # probability is maximal
