@@ -61,6 +61,7 @@ class SoftMax(object):
         # probabilities
         #
         self.p_y_given_x = T.nnet.softmax(T.dot(input, self.W) + self.b)
+        print("p_y")
         pp(self.p_y_given_x)
         #
         # symbolic description of how to compute prediction as class whose
@@ -71,6 +72,11 @@ class SoftMax(object):
         # print("self.p_y_given_x.shape.eval()")
         # print(self.p_y_given_x.shape.eval())
         # print("break")
+
+        print("argmax")
+        pp(T.argmax(self.p_y_given_x[:, 0:3]))
+        debugprint(T.argmax(self.p_y_given_x[:, 0:3]))
+
 
         self.y_pred = T.dmatrix()
         for i in range(n_symbol):
