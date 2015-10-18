@@ -64,6 +64,8 @@ class HiddenLayer(object):
         self.b = b
 
         lin_output = T.dot(input, self.W) + self.b
+        print("hidden.py")
+        print(lin_output.shape.eval())
         self.output = (
             lin_output if activation is None
             else activation(lin_output)
