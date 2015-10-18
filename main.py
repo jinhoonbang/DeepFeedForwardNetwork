@@ -99,14 +99,21 @@ def load_data(dataset):
         variable) would lead to a large decrease in performance.
         """
         data_x, data_y = data_xy
-        print("main.py data_y")
-        print(data_y.shape)
+
         shared_x = theano.shared(numpy.asarray(data_x,
                                                dtype=theano.config.floatX),
                                  borrow=borrow)
         shared_y = theano.shared(numpy.asarray(data_y,
                                                dtype=theano.config.floatX),
                                  borrow=borrow)
+
+        print("main.py")
+        print(shared_x)
+        print(shared_x.get_value.shape)
+        print(shared_y)
+        print(shared_y.get_value.shape)
+
+
         # When storing data on the GPU it has to be stored as floats
         # therefore we will store the labels as ``floatX`` as well
         # (``shared_y`` does exactly that). But during our computations
