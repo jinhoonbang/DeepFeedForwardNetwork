@@ -139,7 +139,7 @@ class SoftMax(object):
 
         neg_log = 0
         for i in range(0, n_symbol):
-            neg_log = neg_log - T.mean(T.log(self.p_y_given_x[T.arange(y.shape[0]), y[:,i]+3*i+1])),
+            neg_log = neg_log - T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), y[:,i]+3*i+1]),
 
         return neg_log
         # return -T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), y[:,0]])
