@@ -57,6 +57,13 @@ class SoftMax(object):
             borrow=True
         )
 
+        try:
+            print("W.shape", self.W.shape.eval())
+            print("W.eval", self.W.eval())
+            print("W", self.W)
+        except:
+            pass
+
         # symbolic expression for computing the matrix of class-membership
         # probabilities
         #
