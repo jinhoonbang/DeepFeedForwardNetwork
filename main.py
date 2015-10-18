@@ -50,7 +50,7 @@ def preprocessData(path):
     feature = dfFeature.tail(params['n_row']).as_matrix()
 
     label = label.astype('int32')
-    feature = feature.astype('float32')
+    feature = feature.astype('float64')
 
     return feature, label
 
