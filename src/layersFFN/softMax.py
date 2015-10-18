@@ -57,11 +57,6 @@ class SoftMax(object):
             borrow=True
         )
 
-        try:
-            print(input.shape)
-        except:
-            pass
-
         # symbolic expression for computing the matrix of class-membership
         # probabilities
         #
@@ -71,12 +66,12 @@ class SoftMax(object):
         #
         # symbolic description of how to compute prediction as class whose
         # probability is maximal
-        # self.y_pred = T.argmax(self.p_y_given_x, axis=1)
+        self.y_pred = T.argmax(self.p_y_given_x, axis=1)
 
 
-        self.y_pred = T.dmatrix()
-        for i in range(n_symbol):
-            self.y_pred = T.concatenate([self.y_pred, T.argmax(self.p_y_given_x[:,3*i:3*(i+1)])], axis=1)
+        # self.y_pred = T.dmatrix()
+        # for i in range(n_symbol):
+        #     self.y_pred = T.concatenate([self.y_pred, T.argmax(self.p_y_given_x[:,3*i:3*(i+1)])], axis=1)
 
         # b1 = T.argmax(self.p_y_given_x[:, 0:3], axis=1)
         # b2 = T.argmax(self.p_y_given_x[:, 3:6], axis=1)
