@@ -71,8 +71,8 @@ class SoftMax(object):
 
         self.y_pred = T.dmatrix()
         for i in range(n_symbol):
-            self.y_pred = T.concatenate([self.y_pred, T.argmax(self.p_y_given_x[:,3*i:3*(i+1)])], axis=1, keepdims=True, axis=1)
-
+            self.y_pred = T.concatenate([self.y_pred, T.argmax(self.p_y_given_x[:,3*i:3*(i+1)], axis=1, keepdims=True)], axis=1)
+            
         # b1 = T.argmax(self.p_y_given_x[:, 0:3], axis=1, keepdims=True)
         # b2 = T.argmax(self.p_y_given_x[:, 3:6], axis=1, keepdims=True)
         # b3 = T.argmax(self.p_y_given_x[:, 6:9], axis=1, keepdims=True)
