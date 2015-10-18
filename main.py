@@ -109,9 +109,7 @@ def load_data(dataset):
 
         print("main.py")
         print(shared_x)
-        print(shared_x.get_value.shape)
         print(shared_y)
-        print(shared_y.get_value.shape)
 
 
         # When storing data on the GPU it has to be stored as floats
