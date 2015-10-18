@@ -58,9 +58,7 @@ class SoftMax(object):
         )
 
         try:
-            print("W.shape", self.W.shape.eval())
-            print("W.eval", self.W.eval())
-            print("W", self.W)
+            print(input.shape)
         except:
             pass
 
@@ -69,28 +67,6 @@ class SoftMax(object):
         #
 
         self.p_y_given_x = T.nnet.softmax(T.dot(input, self.W) + self.b)
-        print("p_y")
-        try:
-            print(input.eval())
-            print(self.W.eval())
-        except:
-            print("eval failed")
-        try:
-            print(input.shape)
-            print(self.W.shape)
-        except:
-            print("shape failed")
-        try:
-            print(input.shape.eval())
-            print(self.W.shape.eval())
-        except:
-            print("shape eval failed")
-        try:
-            print(input.get_value.shape)
-            print(self.W.shape.eval())
-        except:
-            print("get value shape failed")
-
 
         #
         # symbolic description of how to compute prediction as class whose
