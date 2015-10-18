@@ -62,20 +62,11 @@ class SoftMax(object):
         #
         self.p_y_given_x = T.nnet.softmax(T.dot(input, self.W) + self.b)
         print("p_y")
-        pp(self.p_y_given_x)
+        print(self.p_y_given_x)
         #
         # symbolic description of how to compute prediction as class whose
         # probability is maximal
         # self.y_pred = T.argmax(self.p_y_given_x, axis=1)
-
-        # print("inside softMax")
-        # print("self.p_y_given_x.shape.eval()")
-        # print(self.p_y_given_x.shape.eval())
-        # print("break")
-
-        print("argmax")
-        pp(T.argmax(self.p_y_given_x[:, 0:3]))
-        debugprint(T.argmax(self.p_y_given_x[:, 0:3]))
 
 
         self.y_pred = T.dmatrix()
