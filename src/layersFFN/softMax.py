@@ -139,11 +139,12 @@ class SoftMax(object):
 
         neg_log = 0
         for i in range(0, n_symbol):
-            neg_log = neg_log - T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), y[:,i]+3*i+1]),
+            yindex = T.cast(y[:,i]+3*i+1, 'int64')
+            neg_log = neg_log - T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), yindex])
 
         return neg_log
         # return -T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), y[:,0]])
-
+        # return -T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), y])
     def errors(self, y):
         """Return a float representing the number of errors in the minibatch
         over the total number of examples of the minibatch ; zero one
