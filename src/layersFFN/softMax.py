@@ -13,6 +13,7 @@ from theano.printing import debugprint
 from theano import pp
 
 n_symbol = 43
+n_rows = 50000
 
 class SoftMax(object):
 
@@ -68,9 +69,21 @@ class SoftMax(object):
         # probability is maximal
         # self.y_pred = T.argmax(self.p_y_given_x[:, 0:3], axis=1)
 
-        self.y_pred = T.imatrix()
+        self.y_pred = theano.shared(
+            value = numpy.zeros(
+                (n_rows, n_symbol),
+                dtype=theano.config.floatX
+            ),
+            name='y_pred',
+            borrow=True
+        )
+
         for i in range(n_symbol):
-            self.y_pred = T.stack([self.y_pred, T.argmax(self.p_y_given_x)[:,3*i:3*(i+1)]],axis=1)
+            self.y_pred[:,i] = T.argmax(self.p_y_given_x[:,3*i:3*(i+1)],axis=1, keepdims=True)
+
+        # for i in range(n_symbol):
+        #     self.y_pred = T.stack([self.y_pred, T.argmax(self.p_y_given_x)[:,3*i:3*(i+1)]],axis=1)
+
 
         #Not working.
         # self.y_pred = T.imatrix()

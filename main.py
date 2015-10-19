@@ -19,7 +19,7 @@ params = dict(
     hiddenLayers = [500, 300],
     n_in = 0, #chosen after data is loaded
     n_out = 129, # number of classes
-    n_row = 10000,
+    n_row = 50000,
     batch_size = 20,
     n_epochs = 200,
     # with_projection = True, # applicable only with actOptimization
@@ -48,6 +48,8 @@ def preprocessData(path):
         dfFeature=pd.concat([dfFeature, tempFeature],axis=1)
 
     label = dfLabel.tail(params['n_row']).as_matrix()
+    label = label+1
+    print(label)
     feature = dfFeature.tail(params['n_row']).as_matrix()
 
     label = label.astype('int32')
