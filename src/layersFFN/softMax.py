@@ -80,7 +80,7 @@ class SoftMax(object):
 
         self.y_pred = T.zeros_like(y)
         for i in range(n_symbol):
-            self.new_y_pred = T.set_subtensor(y[:,i], T.argmax(self.p_y_given_x[:,3*i:3*(i+1)],axis=1, keepdims=True))
+            self.new_y_pred = T.set_subtensor(y[:,i], T.argmax(self.p_y_given_x[:,3*i:3*(i+1)],axis=1))
 
         # for i in range(n_symbol):
         #     self.y_pred = T.stack([self.y_pred, T.argmax(self.p_y_given_x)[:,3*i:3*(i+1)]],axis=1)
