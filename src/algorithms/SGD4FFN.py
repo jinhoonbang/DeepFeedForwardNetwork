@@ -57,7 +57,8 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
         input=x,
         layers_hidden=layers_hidden,
         n_in=n_in,
-        n_out=n_out
+        n_out=n_out,
+        y = y
     )
 
     # the cost we minimize during training is the negative log likelihood of

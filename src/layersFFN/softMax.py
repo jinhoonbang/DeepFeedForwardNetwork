@@ -26,7 +26,7 @@ class SoftMax(object):
     determine a class membership probability.
     """
 
-    def __init__(self, input, n_in, n_out):
+    def __init__(self, input, n_in, n_out, y):
         """ Initialize the parameters of the logistic regression
 
         :type input: theano.tensor.TensorType
@@ -78,8 +78,9 @@ class SoftMax(object):
             borrow=True
         )
 
+        self.y_pred = T.zeros_like(y)
         for i in range(n_symbol):
-            self.y_pred[:,i] = T.argmax(self.p_y_given_x[:,3*i:3*(i+1)],axis=1, keepdims=True)
+            self.new_y_pred = T.set_subtensor(y[:,i], T.argmax(self.p_y_given_x[:,3*i:3*(i+1)],axis=1, keepdims=True))
 
         # for i in range(n_symbol):
         #     self.y_pred = T.stack([self.y_pred, T.argmax(self.p_y_given_x)[:,3*i:3*(i+1)]],axis=1)
