@@ -68,8 +68,9 @@ class SoftMax(object):
         # probability is maximal
         # self.y_pred = T.argmax(self.p_y_given_x[:, 0:3], axis=1)
 
+        self.y_pred = T.imatrix()
         for i in range(n_symbol):
-            self.y_pred = T.stack(T.argmax(self.p_y_given_x)[:,3*i:3*(i+1)],axis=1)
+            self.y_pred = T.stack([self.y_pred, T.argmax(self.p_y_given_x)[:,3*i:3*(i+1)]],axis=1)
 
         #Not working.
         # self.y_pred = T.imatrix()
