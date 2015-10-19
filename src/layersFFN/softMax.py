@@ -69,14 +69,14 @@ class SoftMax(object):
         # probability is maximal
         # self.y_pred = T.argmax(self.p_y_given_x[:, 0:3], axis=1)
 
-        self.y_pred = theano.shared(
-            value = numpy.zeros(
-                (n_rows, n_symbol),
-                dtype=theano.config.floatX
-            ),
-            name='y_pred',
-            borrow=True
-        )
+        # self.y_pred = theano.shared(
+        #     value = numpy.zeros(
+        #         (n_rows, n_symbol),
+        #         dtype=theano.config.floatX
+        #     ),
+        #     name='y_pred',
+        #     borrow=True
+        # )
 
         self.y_pred = T.zeros_like(y)
         for i in range(n_symbol):
