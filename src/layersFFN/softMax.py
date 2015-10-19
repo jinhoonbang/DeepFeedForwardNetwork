@@ -69,55 +69,55 @@ class SoftMax(object):
         # self.y_pred = T.argmax(self.p_y_given_x[:, 0:3], axis=1)
 
 
-        # self.y_pred = T.imatrix()
-        # for i in range(n_symbol):
-        #     self.y_pred = T.concatenate([self.y_pred, T.argmax(self.p_y_given_x[:,3*i:3*(i+1)], axis=1, keepdims=True)], axis=1)
+        self.y_pred = T.imatrix()
+        for i in range(n_symbol):
+            self.y_pred = T.concatenate([self.y_pred, T.argmax(self.p_y_given_x[:,3*i:3*(i+1)], axis=1, keepdims=True)], axis=1)
 
-        b1 = T.argmax(self.p_y_given_x[:, 0:3], axis=1, keepdims=True)
-        b2 = T.argmax(self.p_y_given_x[:, 3:6], axis=1, keepdims=True)
-        b3 = T.argmax(self.p_y_given_x[:, 6:9], axis=1, keepdims=True)
-        b4 = T.argmax(self.p_y_given_x[:, 9:12], axis=1, keepdims=True)
-        b5 = T.argmax(self.p_y_given_x[:, 12:15], axis=1, keepdims=True)
-        b6 = T.argmax(self.p_y_given_x[:, 15:18], axis=1, keepdims=True)
-        b7 = T.argmax(self.p_y_given_x[:, 18:21], axis=1, keepdims=True)
-        b8 = T.argmax(self.p_y_given_x[:, 21:24], axis=1, keepdims=True)
-        b9 = T.argmax(self.p_y_given_x[:, 24:27], axis=1, keepdims=True)
-        b10 = T.argmax(self.p_y_given_x[:, 27:30], axis=1, keepdims=True)
-        b11 = T.argmax(self.p_y_given_x[:, 30:33], axis=1, keepdims=True)
-        b12 = T.argmax(self.p_y_given_x[:, 33:36], axis=1, keepdims=True)
-        b13 = T.argmax(self.p_y_given_x[:, 36:39], axis=1, keepdims=True)
-        b14 = T.argmax(self.p_y_given_x[:, 39:42], axis=1, keepdims=True)
-        b15 = T.argmax(self.p_y_given_x[:, 42:45], axis=1, keepdims=True)
-        b16 = T.argmax(self.p_y_given_x[:, 45:48], axis=1, keepdims=True)
-        b17 = T.argmax(self.p_y_given_x[:, 48:51], axis=1, keepdims=True)
-        b18 = T.argmax(self.p_y_given_x[:, 51:54], axis=1, keepdims=True)
-        b19 = T.argmax(self.p_y_given_x[:, 54:57], axis=1, keepdims=True)
-        b20 = T.argmax(self.p_y_given_x[:, 57:60], axis=1, keepdims=True)
-        b21 = T.argmax(self.p_y_given_x[:, 60:63], axis=1, keepdims=True)
-        b22 = T.argmax(self.p_y_given_x[:, 63:66], axis=1, keepdims=True)
-        b23 = T.argmax(self.p_y_given_x[:, 66:69], axis=1, keepdims=True)
-        b24 = T.argmax(self.p_y_given_x[:, 69:72], axis=1, keepdims=True)
-        b25 = T.argmax(self.p_y_given_x[:, 72:75], axis=1, keepdims=True)
-        b26 = T.argmax(self.p_y_given_x[:, 75:78], axis=1, keepdims=True)
-        b27 = T.argmax(self.p_y_given_x[:, 78:81], axis=1, keepdims=True)
-        b28 = T.argmax(self.p_y_given_x[:, 81:84], axis=1, keepdims=True)
-        b29 = T.argmax(self.p_y_given_x[:, 84:87], axis=1, keepdims=True)
-        b30 = T.argmax(self.p_y_given_x[:, 87:90], axis=1, keepdims=True)
-        b31 = T.argmax(self.p_y_given_x[:, 90:93], axis=1, keepdims=True)
-        b32 = T.argmax(self.p_y_given_x[:, 93:96], axis=1, keepdims=True)
-        b33 = T.argmax(self.p_y_given_x[:, 96:99], axis=1, keepdims=True)
-        b34 = T.argmax(self.p_y_given_x[:, 99:102], axis=1, keepdims=True)
-        b35 = T.argmax(self.p_y_given_x[:, 102:105], axis=1, keepdims=True)
-        b36 = T.argmax(self.p_y_given_x[:, 105:108], axis=1, keepdims=True)
-        b37 = T.argmax(self.p_y_given_x[:, 108:111], axis=1, keepdims=True)
-        b38 = T.argmax(self.p_y_given_x[:, 111:114], axis=1, keepdims=True)
-        b39 = T.argmax(self.p_y_given_x[:, 114:117], axis=1, keepdims=True)
-        b40 = T.argmax(self.p_y_given_x[:, 117:120], axis=1, keepdims=True)
-        b41 = T.argmax(self.p_y_given_x[:, 120:123], axis=1, keepdims=True)
-        b42 = T.argmax(self.p_y_given_x[:, 123:126], axis=1, keepdims=True)
-        b43 = T.argmax(self.p_y_given_x[:, 126:129], axis=1, keepdims=True)
-
-        self.y_pred = T.concatenate([b1, b2 ,b3, b4, b5, b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43], axis=1)
+        # b1 = T.argmax(self.p_y_given_x[:, 0:3], axis=1, keepdims=True)
+        # b2 = T.argmax(self.p_y_given_x[:, 3:6], axis=1, keepdims=True)
+        # b3 = T.argmax(self.p_y_given_x[:, 6:9], axis=1, keepdims=True)
+        # b4 = T.argmax(self.p_y_given_x[:, 9:12], axis=1, keepdims=True)
+        # b5 = T.argmax(self.p_y_given_x[:, 12:15], axis=1, keepdims=True)
+        # b6 = T.argmax(self.p_y_given_x[:, 15:18], axis=1, keepdims=True)
+        # b7 = T.argmax(self.p_y_given_x[:, 18:21], axis=1, keepdims=True)
+        # b8 = T.argmax(self.p_y_given_x[:, 21:24], axis=1, keepdims=True)
+        # b9 = T.argmax(self.p_y_given_x[:, 24:27], axis=1, keepdims=True)
+        # b10 = T.argmax(self.p_y_given_x[:, 27:30], axis=1, keepdims=True)
+        # b11 = T.argmax(self.p_y_given_x[:, 30:33], axis=1, keepdims=True)
+        # b12 = T.argmax(self.p_y_given_x[:, 33:36], axis=1, keepdims=True)
+        # b13 = T.argmax(self.p_y_given_x[:, 36:39], axis=1, keepdims=True)
+        # b14 = T.argmax(self.p_y_given_x[:, 39:42], axis=1, keepdims=True)
+        # b15 = T.argmax(self.p_y_given_x[:, 42:45], axis=1, keepdims=True)
+        # b16 = T.argmax(self.p_y_given_x[:, 45:48], axis=1, keepdims=True)
+        # b17 = T.argmax(self.p_y_given_x[:, 48:51], axis=1, keepdims=True)
+        # b18 = T.argmax(self.p_y_given_x[:, 51:54], axis=1, keepdims=True)
+        # b19 = T.argmax(self.p_y_given_x[:, 54:57], axis=1, keepdims=True)
+        # b20 = T.argmax(self.p_y_given_x[:, 57:60], axis=1, keepdims=True)
+        # b21 = T.argmax(self.p_y_given_x[:, 60:63], axis=1, keepdims=True)
+        # b22 = T.argmax(self.p_y_given_x[:, 63:66], axis=1, keepdims=True)
+        # b23 = T.argmax(self.p_y_given_x[:, 66:69], axis=1, keepdims=True)
+        # b24 = T.argmax(self.p_y_given_x[:, 69:72], axis=1, keepdims=True)
+        # b25 = T.argmax(self.p_y_given_x[:, 72:75], axis=1, keepdims=True)
+        # b26 = T.argmax(self.p_y_given_x[:, 75:78], axis=1, keepdims=True)
+        # b27 = T.argmax(self.p_y_given_x[:, 78:81], axis=1, keepdims=True)
+        # b28 = T.argmax(self.p_y_given_x[:, 81:84], axis=1, keepdims=True)
+        # b29 = T.argmax(self.p_y_given_x[:, 84:87], axis=1, keepdims=True)
+        # b30 = T.argmax(self.p_y_given_x[:, 87:90], axis=1, keepdims=True)
+        # b31 = T.argmax(self.p_y_given_x[:, 90:93], axis=1, keepdims=True)
+        # b32 = T.argmax(self.p_y_given_x[:, 93:96], axis=1, keepdims=True)
+        # b33 = T.argmax(self.p_y_given_x[:, 96:99], axis=1, keepdims=True)
+        # b34 = T.argmax(self.p_y_given_x[:, 99:102], axis=1, keepdims=True)
+        # b35 = T.argmax(self.p_y_given_x[:, 102:105], axis=1, keepdims=True)
+        # b36 = T.argmax(self.p_y_given_x[:, 105:108], axis=1, keepdims=True)
+        # b37 = T.argmax(self.p_y_given_x[:, 108:111], axis=1, keepdims=True)
+        # b38 = T.argmax(self.p_y_given_x[:, 111:114], axis=1, keepdims=True)
+        # b39 = T.argmax(self.p_y_given_x[:, 114:117], axis=1, keepdims=True)
+        # b40 = T.argmax(self.p_y_given_x[:, 117:120], axis=1, keepdims=True)
+        # b41 = T.argmax(self.p_y_given_x[:, 120:123], axis=1, keepdims=True)
+        # b42 = T.argmax(self.p_y_given_x[:, 123:126], axis=1, keepdims=True)
+        # b43 = T.argmax(self.p_y_given_x[:, 126:129], axis=1, keepdims=True)
+        #
+        # self.y_pred = T.concatenate([b1, b2 ,b3, b4, b5, b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43], axis=1)
 
         # parameters of the model
         self.params = [self.W, self.b]
@@ -136,6 +136,13 @@ class SoftMax(object):
         Note: we use the mean instead of the sum so that
               the learning rate is less dependent on the batch size
         """
+
+        neg_log = 0
+        for i in range(0, n_symbol):
+            #yindex = T.cast(y[:,i]+3*i+1, 'int32')
+            yindex = y[:,i]+3*i+1
+            neg_log = neg_log - T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), yindex])
+        return neg_log
 
         # m1 = -T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), y[:,0]+1])
         # m2 = -T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), y[:,1]+4])
@@ -184,15 +191,6 @@ class SoftMax(object):
         #         +m20+m21+m22+m23+m24+m25+m26+m27+m28+m29+m30+m31+m32+m33+m34+m35+m36+
         #         m37+m38+m39+m40+m41+m42+m43)
 
-
-        neg_log = 0
-        for i in range(0, n_symbol):
-            #yindex = T.cast(y[:,i]+3*i+1, 'int32')
-            yindex = y[:,i]+3*i+1
-            neg_log = neg_log - T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), yindex])
-
-        return neg_log
-        # return -T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), y[:,0]])
         # return -T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), y])
     def errors(self, y):
         """Return a float representing the number of errors in the minibatch
