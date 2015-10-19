@@ -12,6 +12,7 @@ import numpy as np
 from src.algorithms.SGD4FFN import SGD4FFN as SGD4FFN
 
 theano.config.exception_verbosity = 'high'
+theano.config.optimizer = 'fast_compile'
 
 params = dict(
     dataset = glob.glob('/home/jbang/data/smallHybrid/*'),
