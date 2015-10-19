@@ -191,7 +191,7 @@ class SoftMax(object):
             yindex = y[:,i]+3*i+1
             neg_log = neg_log - T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), yindex])
 
-        # return neg_log
+        return neg_log
         # return -T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), y[:,0]])
         # return -T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), y])
     def errors(self, y):
