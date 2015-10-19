@@ -108,10 +108,6 @@ def load_data(dataset):
                                                dtype=theano.config.floatX),
                                  borrow=borrow)
 
-        print("main.py")
-        print(shared_x)
-        print(shared_y)
-
 
         # When storing data on the GPU it has to be stored as floats
         # therefore we will store the labels as ``floatX`` as well
