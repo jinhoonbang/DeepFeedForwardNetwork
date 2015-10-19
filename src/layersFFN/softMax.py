@@ -26,7 +26,7 @@ class SoftMax(object):
     determine a class membership probability.
     """
 
-    def __init__(self, input, n_in, n_out, y):
+    def __init__(self, input, n_in, n_out):
         """ Initialize the parameters of the logistic regression
 
         :type input: theano.tensor.TensorType

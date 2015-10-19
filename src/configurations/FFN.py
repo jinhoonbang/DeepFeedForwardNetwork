@@ -19,7 +19,7 @@ class FFN(object):
     class).
     """
 
-    def __init__(self, rng, input, layers_hidden, n_in, n_out, y):
+    def __init__(self, rng, input, layers_hidden, n_in, n_out):
         """Initialize the parameters for the multilayer perceptron
 
         :type rng: numpy.random.RandomState
@@ -61,8 +61,7 @@ class FFN(object):
         self.logRegressionLayer = SoftMax(
             input=self.hiddenLayers[-1].output,
             n_in=layers_hidden[-1],
-            n_out=n_out,
-            y = y
+            n_out=n_out
         )
 
 

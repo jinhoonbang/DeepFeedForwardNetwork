@@ -10,9 +10,13 @@ import glob
 import pandas as pd
 import numpy as np
 from src.algorithms.SGD4FFN import SGD4FFN as SGD4FFN
+import sys
 
 theano.config.exception_verbosity = 'high'
 theano.config.optimizer = 'fast_compile'
+
+log = open('DFFN.log', 'w')
+sys.stdout = log
 
 params = dict(
     dataset = glob.glob('/home/jbang/data/smallHybrid/*'),
@@ -21,7 +25,7 @@ params = dict(
     n_out = 129, # number of classes
     n_row = 50000,
     batch_size = 20,
-    n_epochs = 200,
+    n_epochs = 2,
     # with_projection = True, # applicable only with actOptimization
     # model = "plain" # actChoice or plain or actOptimization
 )
@@ -132,3 +136,4 @@ if __name__ == '__main__':
     datasets = load_data(params['dataset'])
     SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
 
+log.close()
