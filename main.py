@@ -25,7 +25,7 @@ params = dict(
     n_out = 129, # number of classes
     n_row = 50000,
     batch_size = 20,
-    n_epochs = 200,
+    n_epochs = 2,
     # with_projection = True, # applicable only with actOptimization
     # model = "plain" # actChoice or plain or actOptimization
 )
