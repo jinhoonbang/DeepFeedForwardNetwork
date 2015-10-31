@@ -1,0 +1,14 @@
+[[ 0.  1.  1. ...,  2.  1.  2.]
+ [ 0.  1.  2. ...,  2.  2.  0.]
+ [ 1.  1.  2. ...,  1.  0.  2.]
+ ..., 
+ [ 0.  2.  2. ...,  0.  0.  0.]
+ [ 0.  1.  1. ...,  2.  0.  2.]
+ [ 0.  0.  2. ...,  0.  0.  0.]]
+... loading data
+... building the model
+... training
+epoch 1, minibatch 1500/1500, validation error 3033.000000 % average loss nan %
+     epoch 1, minibatch 1500/1500, test error of best model 3055.390000 % average loss nan %
+epoch 2, minibatch 1500/1500, validation error 3033.000000 % average loss nan %
+Optimization complete. Best validation score of 3033.000000 % obtained at iteration 1500, with test performance 3055.390000 %

@@ -15,7 +15,7 @@ import sys
 theano.config.exception_verbosity = 'high'
 theano.config.optimizer = 'fast_compile'
 
-log = open('DFFN.log', 'w')
+log = open('DFFN_100epoch.log', 'w')
 sys.stdout = log
 
 params = dict(
@@ -25,7 +25,7 @@ params = dict(
     n_out = 129, # number of classes
     n_row = 50000,
     batch_size = 20,
-    n_epochs = 2,
+    n_epochs = 100,
     # with_projection = True, # applicable only with actOptimization
     # model = "plain" # actChoice or plain or actOptimization
 )
