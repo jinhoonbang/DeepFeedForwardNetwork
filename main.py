@@ -20,12 +20,12 @@ sys.stdout = log
 
 params = dict(
     dataset = glob.glob('/home/jbang/data/smallHybrid/*'),
-    hiddenLayers = [500, 300],
+    hiddenLayers = [1000, 900, 800],
     n_in = 0, #chosen after data is loaded
     n_out = 129, # number of classes
     n_row = 50000,
     batch_size = 20,
-    n_epochs = 100,
+    n_epochs = 300,
     # with_projection = True, # applicable only with actOptimization
     # model = "plain" # actChoice or plain or actOptimization
 )
