@@ -62,7 +62,61 @@ class SoftMax(object):
         # probabilities
         #
 
+        # dotproduct = T.dot(input, self.W) + self.b
+
+
+
         self.p_y_given_x = T.nnet.softmax(T.dot(input, self.W) + self.b)
+        p1 = self.p_y_given_x[:, 0:3]/T.sum(self.p_y_given_x[:,0:3], axis=1, keepdims=True)
+        p2 = self.p_y_given_x[:, 3:6]/T.sum(self.p_y_given_x[:,3:6], axis=1, keepdims=True)
+        p3 = self.p_y_given_x[:, 6:9]/T.sum(self.p_y_given_x[:,6:9], axis=1, keepdims=True)
+        p4 = self.p_y_given_x[:, 9:12]/T.sum(self.p_y_given_x[:,9:12], axis=1, keepdims=True)
+        p5 = self.p_y_given_x[:, 12:15]/T.sum(self.p_y_given_x[:,12:15], axis=1, keepdims=True)
+        p6 = self.p_y_given_x[:, 15:18]/T.sum(self.p_y_given_x[:,15:18], axis=1, keepdims=True)
+        p7 = self.p_y_given_x[:, 18:21]/T.sum(self.p_y_given_x[:,18:21], axis=1, keepdims=True)
+        p8 = self.p_y_given_x[:, 21:24]/T.sum(self.p_y_given_x[:,21:24], axis=1, keepdims=True)
+        p9 = self.p_y_given_x[:, 24:27]/T.sum(self.p_y_given_x[:,24:27], axis=1, keepdims=True)
+        p10 = self.p_y_given_x[:, 27:30]/T.sum(self.p_y_given_x[:,27:30], axis=1, keepdims=True)
+        p11 = self.p_y_given_x[:, 30:33]/T.sum(self.p_y_given_x[:,30:33], axis=1, keepdims=True)
+        p12 = self.p_y_given_x[:, 33:36]/T.sum(self.p_y_given_x[:,33:36], axis=1, keepdims=True)
+        p13 = self.p_y_given_x[:, 36:39]/T.sum(self.p_y_given_x[:,36:39], axis=1, keepdims=True)
+        p14 = self.p_y_given_x[:, 39:42]/T.sum(self.p_y_given_x[:,39:42], axis=1, keepdims=True)
+        p15 = self.p_y_given_x[:, 42:45]/T.sum(self.p_y_given_x[:,42:45], axis=1, keepdims=True)
+        p16 = self.p_y_given_x[:, 45:48]/T.sum(self.p_y_given_x[:,45:48], axis=1, keepdims=True)
+        p17 = self.p_y_given_x[:, 48:51]/T.sum(self.p_y_given_x[:,48:51], axis=1, keepdims=True)
+        p18 = self.p_y_given_x[:, 51:54]/T.sum(self.p_y_given_x[:,51:54], axis=1, keepdims=True)
+        p19 = self.p_y_given_x[:, 54:57]/T.sum(self.p_y_given_x[:,54:57], axis=1, keepdims=True)
+        p20 = self.p_y_given_x[:, 57:60]/T.sum(self.p_y_given_x[:,57:60], axis=1, keepdims=True)
+        p21 = self.p_y_given_x[:, 60:63]/T.sum(self.p_y_given_x[:,60:63], axis=1, keepdims=True)
+        p22 = self.p_y_given_x[:, 63:66]/T.sum(self.p_y_given_x[:,63:66], axis=1, keepdims=True)
+        p23 = self.p_y_given_x[:, 66:69]/T.sum(self.p_y_given_x[:,66:69], axis=1, keepdims=True)
+        p24 = self.p_y_given_x[:, 69:72]/T.sum(self.p_y_given_x[:,69:72], axis=1, keepdims=True)
+        p25 = self.p_y_given_x[:, 72:75]/T.sum(self.p_y_given_x[:,72:75], axis=1, keepdims=True)
+        p26 = self.p_y_given_x[:, 75:78]/T.sum(self.p_y_given_x[:,75:78], axis=1, keepdims=True)
+        p27 = self.p_y_given_x[:, 78:81]/T.sum(self.p_y_given_x[:,78:81], axis=1, keepdims=True)
+        p28 = self.p_y_given_x[:, 81:84]/T.sum(self.p_y_given_x[:,81:84], axis=1, keepdims=True)
+        p29 = self.p_y_given_x[:, 84:87]/T.sum(self.p_y_given_x[:,84:87], axis=1, keepdims=True)
+        p30 = self.p_y_given_x[:, 87:90]/T.sum(self.p_y_given_x[:,87:90], axis=1, keepdims=True)
+        p31 = self.p_y_given_x[:, 90:93]/T.sum(self.p_y_given_x[:,90:93], axis=1, keepdims=True)
+        p32 = self.p_y_given_x[:, 93:96]/T.sum(self.p_y_given_x[:,93:96], axis=1, keepdims=True)
+        p33 = self.p_y_given_x[:, 96:99]/T.sum(self.p_y_given_x[:,96:99], axis=1, keepdims=True)
+        p34 = self.p_y_given_x[:, 99:102]/T.sum(self.p_y_given_x[:,99:102], axis=1, keepdims=True)
+        p35 = self.p_y_given_x[:, 102:105]/T.sum(self.p_y_given_x[:,102:105], axis=1, keepdims=True)
+        p36 = self.p_y_given_x[:, 105:108]/T.sum(self.p_y_given_x[:,105:108], axis=1, keepdims=True)
+        p37 = self.p_y_given_x[:, 108:111]/T.sum(self.p_y_given_x[:,108:111], axis=1, keepdims=True)
+        p38 = self.p_y_given_x[:, 111:114]/T.sum(self.p_y_given_x[:,111:114], axis=1, keepdims=True)
+        p39 = self.p_y_given_x[:, 114:117]/T.sum(self.p_y_given_x[:,114:117], axis=1, keepdims=True)
+        p40 = self.p_y_given_x[:, 117:120]/T.sum(self.p_y_given_x[:,117:120], axis=1, keepdims=True)
+        p41 = self.p_y_given_x[:, 120:123]/T.sum(self.p_y_given_x[:,120:123], axis=1, keepdims=True)
+        p42 = self.p_y_given_x[:, 123:126]/T.sum(self.p_y_given_x[:,123:126], axis=1, keepdims=True)
+        p43 = self.p_y_given_x[:, 126:129]/T.sum(self.p_y_given_x[:,126:129], axis=1, keepdims=True)
+
+        self.y_pred = T.concatenate([p1, p2 ,p3, p4, p5, p6,p7,p8,p9,p10,p11,p12,p13,p14 ,p15, p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30,p31,p32,p33,p34,p35,p36,p37,p38,p39,p40,p41,p42,p43], axis=1)
+
+
+
+        #modify softmax so that it calculates the sum of three columns instead of all columns
+
 
         #
         # symbolic description of how to compute prediction as class whose
@@ -233,10 +287,11 @@ class SoftMax(object):
         if y.dtype.startswith('int'):
             # the T.neq operator returns a vector of 0s and 1s, where 1
             # represents a mistake in prediction
-            meanError = 0
-            for i in range(0, n_symbol):
-                meanError = meanError + T.mean(T.neq(self.y_pred[:,i], y[:,i]))
-            return meanError
+            return T.mean(T.neq(self.y_pred, y))
+            # meanError = 0
+            # for i in range(0, n_symbol):
+            #     meanError = meanError + T.mean(T.neq(self.y_pred[:,i], y[:,i]))
+            # return meanError
         else:
             raise NotImplementedError()
 

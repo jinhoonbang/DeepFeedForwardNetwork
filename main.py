@@ -23,9 +23,9 @@ params = dict(
     hiddenLayers = [500, 300],
     n_in = 0, #chosen after data is loaded
     n_out = 129, # number of classes
-    n_row = 50000,
+    n_row = 1000,
     batch_size = 20,
-    n_epochs = 2,
+    n_epochs = 3,
     # with_projection = True, # applicable only with actOptimization
     # model = "plain" # actChoice or plain or actOptimization
 )
