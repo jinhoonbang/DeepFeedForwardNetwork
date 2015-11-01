@@ -191,12 +191,13 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
                           (epoch, minibatch_index + 1, n_train_batches,
                            test_score * 100., minibatch_avg_cost))
 
+                    y_pred = classifier.y_pred
+
             if patience <= iter:
                 done_looping = True
                 break
 
-    #return y_pred
-    y_pred = classifier.y_pred
+    print("y_pred")
     print(y_pred)
 
     end_time = timeit.default_timer()
