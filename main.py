@@ -15,8 +15,8 @@ import sys
 theano.config.exception_verbosity = 'high'
 theano.config.optimizer = 'fast_compile'
 
-log = open('DFFN_100epoch.log', 'w')
-sys.stdout = log
+#log = open('DFFN_100epoch.log', 'w')
+#sys.stdout = log
 
 params = dict(
     dataset = glob.glob('/home/jbang/data/smallHybrid/*'),
@@ -136,4 +136,4 @@ if __name__ == '__main__':
     datasets = load_data(params['dataset'])
     SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
 
-log.close()
+#log.close()
