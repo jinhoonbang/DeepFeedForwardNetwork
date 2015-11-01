@@ -295,3 +295,6 @@ class SoftMax(object):
         else:
             raise NotImplementedError()
 
+    def get_y_pred(self):
+        return self.y_pred
+
