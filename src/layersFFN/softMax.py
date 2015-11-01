@@ -191,12 +191,18 @@ class SoftMax(object):
         b43 = T.argmax(self.p_y_given_x[:, 126:129], axis=1, keepdims=True)
 
         self.y_pred = T.concatenate([b1, b2 ,b3, b4, b5, b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43], axis=1)
+        # self.y_pred = theano.shared(self.y_pred,
+        #                             name = 'y_pred',
+        #                             borrow = True)
 
         # parameters of the model
         self.params = [self.W, self.b]
 
         # keep track of model input
         self.input = input
+
+    def get_y_pred(self):
+        return self.y_pred
 
     def negative_log_likelihood(self, y):
         """Return the mean of the negative log-likelihood of the prediction
