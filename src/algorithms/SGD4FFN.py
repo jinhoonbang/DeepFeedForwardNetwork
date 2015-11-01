@@ -80,6 +80,15 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
         }
     )
 
+    test_y = theano.function(
+        inputs = [index],
+        outputs = classifier.y_pred,
+        givens = {
+            x: test_set_x[index * batch_size:(index + 1) * batch_size],
+            y: test_set_y[index * batch_size:(index + 1) * batch_size]
+        }
+    )
+
     validate_model = theano.function(
         inputs=[index],
         outputs=classifier.errors(y),
@@ -185,13 +194,13 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
                     test_losses = [test_model(i) for i
                                    in range(n_test_batches)]
                     test_score = numpy.mean(test_losses)
+                    y_pred = [test_y(i) for i
+                              in range (n_test_batches)]
 
                     print(('     epoch %i, minibatch %i/%i, test error of '
                            'best model %f %% average loss %f %%') %
                           (epoch, minibatch_index + 1, n_train_batches,
                            test_score * 100., minibatch_avg_cost))
-
-                    y_pred = classifier.y_pred
 
             if patience <= iter:
                 done_looping = True
