@@ -64,9 +64,8 @@ class SoftMax(object):
 
         # dotproduct = T.dot(input, self.W) + self.b
 
-
-
         self.p_y_given_x = T.nnet.softmax(T.dot(input, self.W) + self.b)
+
         p1 = self.p_y_given_x[:, 0:3]/T.sum(self.p_y_given_x[:,0:3], axis=1, keepdims=True)
         p2 = self.p_y_given_x[:, 3:6]/T.sum(self.p_y_given_x[:,3:6], axis=1, keepdims=True)
         p3 = self.p_y_given_x[:, 6:9]/T.sum(self.p_y_given_x[:,6:9], axis=1, keepdims=True)
@@ -111,7 +110,7 @@ class SoftMax(object):
         p42 = self.p_y_given_x[:, 123:126]/T.sum(self.p_y_given_x[:,123:126], axis=1, keepdims=True)
         p43 = self.p_y_given_x[:, 126:129]/T.sum(self.p_y_given_x[:,126:129], axis=1, keepdims=True)
 
-        self.y_pred = T.concatenate([p1, p2 ,p3, p4, p5, p6,p7,p8,p9,p10,p11,p12,p13,p14 ,p15, p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30,p31,p32,p33,p34,p35,p36,p37,p38,p39,p40,p41,p42,p43], axis=1)
+        self.p_y_given_x = T.concatenate([p1, p2 ,p3, p4, p5, p6,p7,p8,p9,p10,p11,p12,p13,p14 ,p15, p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30,p31,p32,p33,p34,p35,p36,p37,p38,p39,p40,p41,p42,p43], axis=1)
 
 
 
@@ -294,7 +293,4 @@ class SoftMax(object):
             # return meanError
         else:
             raise NotImplementedError()
-
-    def get_y_pred(self):
-        return self.y_pred
 
