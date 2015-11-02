@@ -134,8 +134,8 @@ def load_data(dataset):
 
 if __name__ == '__main__':
     datasets = load_data(params['dataset'])
-    y_pred = SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
+    SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
 
-    print(y_pred)
+
 
 #log.close()
