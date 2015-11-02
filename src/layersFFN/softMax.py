@@ -211,12 +211,12 @@ class SoftMax(object):
               the learning rate is less dependent on the batch size
         """
 
-        # neg_log = 0
-        # for i in range(0, n_symbol):
-        #     #yindex = T.cast(y[:,i]+3*i+1, 'int32')
-        #     yindex = y[:,i]+3*i
-        #     neg_log = neg_log - T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), yindex])
-        # return neg_log
+        neg_log = 0
+        for i in range(0, n_symbol):
+            #yindex = T.cast(y[:,i]+3*i+1, 'int32')
+            yindex = y[:,i]+3*i
+            neg_log = neg_log - T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), yindex])
+        return neg_log
 
         # m1 = -T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), y[:,0]+0])
         # m2 = -T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), y[:,1]+3])
