@@ -91,11 +91,7 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
 
     y_test = theano.function(
         input = [index],
-        outputs = classifier.y_pred,
-        givens = {
-            x: valid_set_x[index * batch_size:(index + 1) * batch_size],
-            y: valid_set_y[index * batch_size:(index + 1) * batch_size]
-        }
+        outputs = classifier.y_pred()
     )
 
     # y_test = theano.function(
