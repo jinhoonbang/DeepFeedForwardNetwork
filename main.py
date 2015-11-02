@@ -15,17 +15,18 @@ import sys
 theano.config.exception_verbosity = 'high'
 theano.config.optimizer = 'fast_compile'
 
-#log = open('DFFN_100epoch.log', 'w')
-#sys.stdout = log
+np.set_printoptions(threshold=np.inf)
+log = open('DBN.log', 'w')
+sys.stdout = log
 
 params = dict(
     dataset = glob.glob('/home/jbang/data/smallHybrid/*'),
     hiddenLayers = [1000, 900, 800],
     n_in = 0, #chosen after data is loaded
     n_out = 129, # number of classes
-    n_row = 1000,
+    n_row = 500,
     batch_size = 20,
-    n_epochs = 3,
+    n_epochs = 2,
     # with_projection = True, # applicable only with actOptimization
     # model = "plain" # actChoice or plain or actOptimization
 )
@@ -136,6 +137,4 @@ if __name__ == '__main__':
     datasets = load_data(params['dataset'])
     SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
 
-
-
-#log.close()
+log.close()

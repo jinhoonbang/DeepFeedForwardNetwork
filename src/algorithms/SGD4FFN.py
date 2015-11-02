@@ -4,10 +4,13 @@ import timeit
 import numpy
 import theano
 import theano.tensor as T
+import sys
 
 from src.configurations.FFN import FFN
 from sklearn.metrics import f1_score, classification_report
 
+log = open('SGD4FFN.log', 'w')
+sys.stdout = log
 
 def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.00, L2_reg=0.0001, n_epochs=1000,
           batch_size=20):
@@ -219,9 +222,12 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
         os.path.split(__file__)[1] +
         ' ran for %.2fm' % ((end_time - start_time) / 60.))
 
-    print(f1_score(test_set_y.get_value(borrow=True), y_pred, average='macro'))
-    print(f1_score(test_set_y.get_value(borrow=True), y_pred, average='micro'))
-    print(f1_score(test_set_y.get_value(borrow=True), y_pred, average='weighted'))
-    print(classification_report(test_set_y.get_value(borrow=True), y_pred))
+    y_actual = test_set_y.eval()
+
+    y_pred = y_pred.tolist()
+    y_actual = y_actual.tolist()
+    print(classification_report(y_actual, y_pred))
+
+log.close()
 
 

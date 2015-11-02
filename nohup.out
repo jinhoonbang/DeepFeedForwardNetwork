@@ -22,3 +22,29 @@ Traceback (most recent call last):
   File "/home/jbang/scripts/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 206, in SGD4FFN
     print >> sys.stderr, ('The code for file ' +
 TypeError: unsupported operand type(s) for >>: 'builtin_function_or_method' and '_io.TextIOWrapper'
+Traceback (most recent call last):
+  File "main.py", line 137, in <module>
+    SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
+  File "/home/jbang/scripts/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 228, in SGD4FFN
+    print(classification_report(y_actual, y_pred))
+  File "/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/metrics/classification.py", line 1224, in classification_report
+    labels = unique_labels(y_true, y_pred)
+  File "/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py", line 93, in unique_labels
+    raise ValueError("Mix type of y not allowed, got types %s" % ys_types)
+ValueError: Mix type of y not allowed, got types {'multiclass-multioutput', 'multilabel-indicator'}
+Traceback (most recent call last):
+  File "main.py", line 137, in <module>
+    datasets = load_data(params['dataset'])
+  File "main.py", line 86, in load_data
+    feature, label = preprocessData(dataset)
+  File "main.py", line 57, in preprocessData
+    print(label)
+  File "/home/jbang/anaconda3/lib/python3.4/site-packages/numpy/core/numeric.py", line 1715, in array_str
+    return array2string(a, max_line_width, precision, suppress_small, ' ', "", str)
+  File "/home/jbang/anaconda3/lib/python3.4/site-packages/numpy/core/arrayprint.py", line 454, in array2string
+    separator, prefix, formatter=formatter)
+  File "/home/jbang/anaconda3/lib/python3.4/site-packages/numpy/core/arrayprint.py", line 328, in _array2string
+    _summaryEdgeItems, summary_insert)[:-1]
+  File "/home/jbang/anaconda3/lib/python3.4/site-packages/numpy/core/arrayprint.py", line 524, in _formatArray
+    s = s.rstrip() + sep.rstrip() + '\n'*max(rank-1, 1)
+KeyboardInterrupt
