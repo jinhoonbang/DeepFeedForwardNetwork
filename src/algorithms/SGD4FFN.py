@@ -206,7 +206,7 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
                 done_looping = True
                 break
 
-    y_pred = train_model(test_set_x)
+    y_pred = predict_model(test_set_x)
     print(y_pred)
 
     end_time = timeit.default_timer()
