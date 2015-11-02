@@ -89,6 +89,13 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
         }
     )
 
+    predict_model = theano.function(
+        inputs = [classifier.input],
+        outputs = classifier.y_pred
+    )
+
+
+
     # y_test = theano.function(
     #     outputs = classifier.y_pred,
     # )
@@ -199,7 +206,7 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
                 done_looping = True
                 break
 
-    print("y_pred")
+    y_pred = train_model(test_set_x)
     print(classifier.y_pred.get_value())
 
     end_time = timeit.default_timer()
