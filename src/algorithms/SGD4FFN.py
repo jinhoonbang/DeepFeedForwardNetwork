@@ -80,15 +80,6 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
         }
     )
 
-    test_y = theano.function(
-        inputs = [index],
-        outputs = classifier.y_pred,
-        givens = {
-            x: test_set_x[index * batch_size:(index + 1) * batch_size],
-            y: test_set_y[index * batch_size:(index + 1) * batch_size]
-        }
-    )
-
     validate_model = theano.function(
         inputs=[index],
         outputs=classifier.errors(y),
@@ -97,6 +88,19 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
             y: valid_set_y[index * batch_size:(index + 1) * batch_size]
         }
     )
+
+    y_test = theano.function(
+        input = [index],
+        outputs = classifier.y_pred,
+        givens = {
+            x: valid_set_x[index * batch_size:(index + 1) * batch_size],
+            y: valid_set_y[index * batch_size:(index + 1) * batch_size]
+        }
+    )
+
+    # y_test = theano.function(
+    #     outputs = classifier.y_pred,
+    # )
 
     # compute the gradient of cost with respect to theta (sorted in params)
     # the resulting gradients will be stored in a list gparams
@@ -194,7 +198,7 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
                     test_losses = [test_model(i) for i
                                    in range(n_test_batches)]
                     test_score = numpy.mean(test_losses)
-                    y_pred = [test_y(i) for i
+                    y_pred = [y_test(i) for i
                               in range (n_test_batches)]
 
                     print(('     epoch %i, minibatch %i/%i, test error of '

@@ -86,7 +86,7 @@ class FFN(object):
         # same holds for the function computing the number of errors
         self.errors = self.logRegressionLayer.errors
 
-        self.y_pred = self.logRegressionLayer.y_pred
+        self.y_pred = self.logRegressionLayer.get_y_pred
 
         # the parameters of the model are the parameters of the layers
         self.params = []
