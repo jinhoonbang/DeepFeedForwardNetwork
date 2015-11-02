@@ -89,10 +89,6 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
         }
     )
 
-    y_test = theano.function(
-        outputs = classifier.y_pred()
-    )
-
     # y_test = theano.function(
     #     outputs = classifier.y_pred,
     # )
@@ -193,8 +189,7 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
                     test_losses = [test_model(i) for i
                                    in range(n_test_batches)]
                     test_score = numpy.mean(test_losses)
-                    y_pred = [y_test(i) for i
-                              in range (n_test_batches)]
+                    y_pred = classifier.y_pred.eval()
 
                     print(('     epoch %i, minibatch %i/%i, test error of '
                            'best model %f %% average loss %f %%') %
