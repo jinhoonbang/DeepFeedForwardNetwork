@@ -219,9 +219,11 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
         os.path.split(__file__)[1] +
         ' ran for %.2fm' % ((end_time - start_time) / 60.))
 
-    print(f1_score(test_set_y.get_value(borrow=True), y_pred, average='macro'))
-    print(f1_score(test_set_y.get_value(borrow=True), y_pred, average='micro'))
-    print(f1_score(test_set_y.get_value(borrow=True), y_pred, average='weighted'))
-    print(classification_report(test_set_y.get_value(borrow=True), y_pred))
+    y_actual = test_set_y.get_value(borrow=True)
+
+    print(f1_score(y_actual, y_pred, average='macro'))
+    print(f1_score(y_actual, y_pred, average='micro'))
+    print(f1_score(y_actual, y_pred, average='weighted'))
+    print(classification_report(y_actual, y_pred))
 
 
