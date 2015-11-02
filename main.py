@@ -25,7 +25,7 @@ params = dict(
     n_out = 129, # number of classes
     n_row = 1000,
     batch_size = 20,
-    n_epochs = 10,
+    n_epochs = 3,
     # with_projection = True, # applicable only with actOptimization
     # model = "plain" # actChoice or plain or actOptimization
 )
@@ -134,6 +134,8 @@ def load_data(dataset):
 
 if __name__ == '__main__':
     datasets = load_data(params['dataset'])
-    SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
+    y_pred = SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
+
+    print(y_pred)
 
 #log.close()
