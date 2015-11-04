@@ -48,3 +48,124 @@ Traceback (most recent call last):
   File "/home/jbang/anaconda3/lib/python3.4/site-packages/numpy/core/arrayprint.py", line 524, in _formatArray
     s = s.rstrip() + sep.rstrip() + '\n'*max(rank-1, 1)
 KeyboardInterrupt
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/metrics/classification.py:958: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+Traceback (most recent call last):
+  File "main.py", line 134, in <module>
+    datasets = load_data(params['dataset'])
+  File "main.py", line 83, in load_data
+    feature, label = preprocessData(dataset)
+  File "main.py", line 54, in preprocessData
+    print(label)
+ValueError: I/O operation on closed file.
+Traceback (most recent call last):
+  File "main.py", line 132, in <module>
+    SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
+  File "/home/jbang/scripts/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 50, in SGD4FFN
+    print('... building the model')
+ValueError: I/O operation on closed file.
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/metrics/classification.py:958: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/metrics/classification.py:958: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/metrics/classification.py:958: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/metrics/classification.py:958: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    from src.algorithms.SGD4FFN import SGD4FFN as SGD4FFN
+  File "/home/jbang/scripts/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 8, in <module>
+    from src.configurations.FFN import FFN
+  File "/home/jbang/scripts/DeepFeedForwardNetwork/src/configurations/FFN.py", line 90
+    self.p_y_given_x = self.logRegressionLayer.p_y_given_x
+                                                         ^
+TabError: inconsistent use of tabs and spaces in indentation
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/metrics/classification.py:958: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/metrics/classification.py:958: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)

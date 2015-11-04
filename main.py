@@ -16,7 +16,8 @@ theano.config.exception_verbosity = 'high'
 theano.config.optimizer = 'fast_compile'
 
 np.set_printoptions(threshold=np.inf)
-log = open('DBN.log', 'w')
+
+log = open('n_ep2.log', 'w')
 sys.stdout = log
 
 params = dict(
@@ -24,8 +25,8 @@ params = dict(
     hiddenLayers = [1000, 900, 800],
     n_in = 0, #chosen after data is loaded
     n_out = 129, # number of classes
-    n_row = 500,
-    batch_size = 20,
+    n_row = 1000,
+    batch_size = 100,
     n_epochs = 2,
     # with_projection = True, # applicable only with actOptimization
     # model = "plain" # actChoice or plain or actOptimization
@@ -54,7 +55,6 @@ def preprocessData(path):
 
     label = dfLabel.tail(params['n_row']).as_matrix()
     label = label+1
-    print(label)
     feature = dfFeature.tail(params['n_row']).as_matrix()
 
     label = label.astype('int32')
@@ -90,8 +90,6 @@ def load_data(dataset):
     #############
     # LOAD DATA #
     #############
-
-    print('... loading data')
 
     #train_set, valid_set, test_set format: tuple(input, target)
     #input and target are both numpy.ndarray of 2 dimensions (a matrix)

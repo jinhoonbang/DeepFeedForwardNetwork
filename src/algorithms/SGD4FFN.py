@@ -4,13 +4,9 @@ import timeit
 import numpy
 import theano
 import theano.tensor as T
-import sys
 
 from src.configurations.FFN import FFN
 from sklearn.metrics import f1_score, classification_report
-
-log = open('SGD4FFN.log', 'w')
-sys.stdout = log
 
 def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.00, L2_reg=0.0001, n_epochs=1000,
           batch_size=20):
@@ -99,7 +95,10 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
         outputs = classifier.y_pred
     )
 
-
+    predict_proba = theano.function(
+	inputs = [classifier.input],
+	outputs = classifier.p_y_given_x
+    )
 
     # y_test = theano.function(
     #     outputs = classifier.y_pred,
@@ -140,8 +139,10 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
     print('... training')
 
     # early-stopping parameters
-    patience = 10000  # look as this many examples regardless
-    patience_increase = 2  # wait this much longer when a new best is
+    patience = 100000
+    patience_increase = 10
+    #patience = 1000  # look as this many examples regardless
+    # patience_increase = 2  # wait this much longer when a new best is
     # found
     improvement_threshold = 0.995  # a relative improvement of this much is
     # considered significant
@@ -212,6 +213,9 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
                 break
 
     y_pred = predict_model(test_set_x.get_value(borrow=True))
+    p_y_given_x = predict_proba(test_set_x.get_value(borrow = True))
+
+    print(p_y_given_x)
     print(y_pred)
 
     end_time = timeit.default_timer()
@@ -228,6 +232,6 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
     y_actual = y_actual.tolist()
     print(classification_report(y_actual, y_pred))
 
-log.close()
+
 
 

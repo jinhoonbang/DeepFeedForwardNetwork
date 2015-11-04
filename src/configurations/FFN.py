@@ -87,7 +87,7 @@ class FFN(object):
         self.errors = self.logRegressionLayer.errors
 
         self.y_pred = self.logRegressionLayer.y_pred
-
+        self.p_y_given_x = self.logRegressionLayer.p_y_given_x
 
         # the parameters of the model are the parameters of the layers
         self.params = []
