@@ -41,7 +41,7 @@ class SoftMax(object):
 
         # initialize with 0 the weights W as a matrix of shape (n_in, n_out)
         self.W = theano.shared(
-            value=numpy.zeros(
+            value=numpy.ones(
                 (n_in, n_out),
                 dtype=theano.config.floatX
             ),
@@ -50,7 +50,7 @@ class SoftMax(object):
         )
         # initialize the biases b as a vector of n_out 0s
         self.b = theano.shared(
-            value=numpy.zeros(
+            value=numpy.ones(
                 (n_out,),
                 dtype=theano.config.floatX
             ),
@@ -61,10 +61,7 @@ class SoftMax(object):
         print("W")
         print(self.W.eval())
         print("B")
-        print(self.b.eval())
-        print("input")
-        print(input.eval())
-	
+        print(self.b.eval())	
 
         # symbolic expression for computing the matrix of class-membership
         # probabilities
