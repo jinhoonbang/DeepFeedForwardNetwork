@@ -127,6 +127,10 @@ def load_data(dataset):
     valid_set_x, valid_set_y = shared_dataset(valid_set)
     train_set_x, train_set_y = shared_dataset(train_set)
 
+    print("test_set_x")
+    print(test_set_x.eval())
+    print(test_set_x.shape.eval())
+
     rval = [(train_set_x, train_set_y), (valid_set_x, valid_set_y),
             (test_set_x, test_set_y)]
     return rval
