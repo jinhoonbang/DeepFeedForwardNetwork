@@ -61,7 +61,7 @@ class SoftMax(object):
         print("W")
         print(self.W.eval())
         print("B")
-        print(self.B.eval())
+        print(self.b.eval())
 
         # symbolic expression for computing the matrix of class-membership
         # probabilities

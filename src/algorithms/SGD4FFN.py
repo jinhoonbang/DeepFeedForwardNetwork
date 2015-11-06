@@ -47,7 +47,7 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
 
     # allocate symbolic variables for the data
     index = T.lscalar()  # index to a [mini]batch
-    x = T.dmatrix('x')  # the data is presented as matrix
+    x = T.matrix('x')  # the data is presented as matrix
     y = T.imatrix('y')  # the labels are presented as matrix
 
     rng = numpy.random.RandomState(1234)
