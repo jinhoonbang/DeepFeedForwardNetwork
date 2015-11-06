@@ -212,8 +212,8 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
                 done_looping = True
                 break
 
-    y_pred = predict_model(test_set_x.get_value(borrow=True))
-    p_y_given_x = predict_proba(test_set_x.get_value(borrow = True))
+    y_pred = predict_model(test_set_x.get_value(borrow = True))
+    p_y_given_x = predict_proba(test_set_x.get_value(borrow=True))
 
     print(p_y_given_x)
     print(y_pred)
