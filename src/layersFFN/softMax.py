@@ -268,7 +268,8 @@ class SoftMax(object):
         #         +m20+m21+m22+m23+m24+m25+m26+m27+m28+m29+m30+m31+m32+m33+m34+m35+m36+
         #         m37+m38+m39+m40+m41+m42+m43)
 
-        return -T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), y])
+        # return -T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), y])
+        return -T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), y[:,0]])
     def errors(self, y):
         """Return a float representing the number of errors in the minibatch
         over the total number of examples of the minibatch ; zero one
