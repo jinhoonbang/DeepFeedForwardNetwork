@@ -15,7 +15,7 @@ import sys
 theano.config.exception_verbosity = 'high'
 theano.config.optimizer = 'fast_compile'
 
-np.set_printoptions(threshold=np.inf)
+np.set_printoptions(threshold=30)
 
 log = open('n_ep2.log', 'w')
 sys.stdout = log
@@ -126,10 +126,6 @@ def load_data(dataset):
     test_set_x, test_set_y = shared_dataset(test_set)
     valid_set_x, valid_set_y = shared_dataset(valid_set)
     train_set_x, train_set_y = shared_dataset(train_set)
-
-    print("test_set_x")
-    print(test_set_x.eval())
-    print(test_set_x.shape.eval())
 
     rval = [(train_set_x, train_set_y), (valid_set_x, valid_set_y),
             (test_set_x, test_set_y)]
