@@ -296,7 +296,7 @@ class SoftMax(object):
         if y.dtype.startswith('int'):
             # the T.neq operator returns a vector of 0s and 1s, where 1
             # represents a mistake in prediction
-            return T.mean(T.neq(self.y_pred, y[:,0]))
+            return T.mean(T.neq(self.y_pred, y))
             # meanError = 0
             # for i in range(0, n_symbol):
             #     meanError = meanError + T.mean(T.neq(self.y_pred[:,i], y[:,i]))
