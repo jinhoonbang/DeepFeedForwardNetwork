@@ -17,7 +17,7 @@ theano.config.optimizer = 'fast_compile'
 
 np.set_printoptions(threshold=30)
 
-log = open('n_ep1.log', 'w')
+log = open('nanP_Y_X.log', 'w')
 sys.stdout = log
 
 params = dict(
