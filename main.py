@@ -27,7 +27,7 @@ params = dict(
     n_out = 129, # number of classes
     n_row = 1000,
     batch_size = 100,
-    n_epochs = 2,
+    n_epochs = 1,
     # with_projection = True, # applicable only with actOptimization
     # model = "plain" # actChoice or plain or actOptimization
 )
@@ -126,6 +126,10 @@ def load_data(dataset):
     test_set_x, test_set_y = shared_dataset(test_set)
     valid_set_x, valid_set_y = shared_dataset(valid_set)
     train_set_x, train_set_y = shared_dataset(train_set)
+
+    print("test_set_x")
+    print(test_set_x.eval())
+    print(test_set_x.shape.eval())
 
     rval = [(train_set_x, train_set_y), (valid_set_x, valid_set_y),
             (test_set_x, test_set_y)]

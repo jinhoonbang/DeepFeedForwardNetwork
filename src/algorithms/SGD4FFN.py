@@ -96,8 +96,8 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
     )
 
     predict_proba = theano.function(
-	inputs = [classifier.input],
-	outputs = classifier.p_y_given_x
+        inputs = [classifier.input],
+        outputs = classifier.p_y_given_x
     )
 
     # y_test = theano.function(
