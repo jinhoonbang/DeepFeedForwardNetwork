@@ -8,6 +8,11 @@ import theano.tensor as T
 from src.configurations.FFN import FFN
 from sklearn.metrics import f1_score, classification_report
 
+# def get_fscore(y_actual, y_pred):
+#
+#
+#     return fscore
+
 def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.00, L2_reg=0.0001, n_epochs=1000,
           batch_size=20):
     """
@@ -229,7 +234,6 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
     p_y_given_x = predict_proba(test_set_x.get_value(borrow=True))
 
     print(p_y_given_x)
-    print(y_pred)
 
     end_time = timeit.default_timer()
     print(('Optimization complete. Best validation score of %f %% '
@@ -243,6 +247,20 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
 
     y_pred = y_pred.tolist()
     y_actual = y_actual.tolist()
+
+    print("y_pred")
+    print(y_pred)
+    print("y_actual")
+    print(y_actual)
+
+    print("fscore")
+    print("macro")
+    print(f1_score(y_actual, y_pred, average = "macro"))
+    print("micro")
+    print(f1_score(y_actual, y_pred, average = "micro"))
+    print("weighted")
+    print(f1_score(y_actual, y_pred, average = "weighted"))
+
     print(classification_report(y_actual, y_pred))
 
 
