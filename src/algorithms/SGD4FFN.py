@@ -36,6 +36,19 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
     valid_set_x, valid_set_y = datasets[1]
     test_set_x, test_set_y = datasets[2]
 
+    print("train_set_x")
+    print(train_set_x.shape.eval())
+    print("train_set_y")
+    print(train_set_y.shape.eval())
+    print("valid_set_x")
+    print(valid_set_x.shape.eval())
+    print("valid_set_y")
+    print(valid_set_y.shape.eval())
+    print("test_set_x")
+    print(test_set_x.shape.eval())
+    print("test_set_y")
+    print(test_set_y.shape.eval())
+
     # compute number of minibatches for training, validation and testing
     n_train_batches = int(train_set_x.get_value(borrow=True).shape[0] / batch_size)
     n_valid_batches = int(valid_set_x.get_value(borrow=True).shape[0] / batch_size)
