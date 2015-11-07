@@ -49,11 +49,7 @@ def get_fscore(y_actual, y_pred):
     pi = sumTP/sumTPFP
     p = sumTP/sumTPFN
 
-    #micro
     fscore = (2 * pi * p) / (pi + p)
-    #macro
-    #fscore =
-
     return fscore
 
 def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.00, L2_reg=0.0001, n_epochs=1000,
@@ -297,16 +293,19 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
     #y_actual = y_actual.tolist()
 
 
-
-
+    microf1 = []
+    macrof1 = []
+    weightedf1 = []
     for i in range(0, 43):
-        print("fscore")
-        print("macro")
-        print(f1_score(y_actual[:,i], y_pred[:,i], average = "macro"))
-        print("micro")
-        print(f1_score(y_actual[:,i], y_pred[:,i], average = "micro"))
-        print("weighted")
-        print(f1_score(y_actual[:,i], y_pred[:,i], average = "weighted"))
+        microf1.append(f1_score(y_actual[:,i], y_pred[:,i], average = "macro"))
+        macrof1.append(f1_score(y_actual[:,i], y_pred[:,i], average = "micro"))
+        weightedf1.append(f1_score(y_actual[:,i], y_pred[:,i], average = "weighted"))
 
-        print(classification_report(y_actual[i], y_pred[i]))
+    microf1 = sum(microf1)/len(microf1)
+    macrof1 = sum(macrof1)/len(macrof1)
+    weightedf1 = sum(weightedf1)/len(weightedf1)
+
+    print("microf1", microf1)
+    print("macrof1", macrof1)
+    print("weighted1", weightedf1)
 
