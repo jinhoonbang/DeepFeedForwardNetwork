@@ -13,7 +13,7 @@ def get_fscore(y_actual, y_pred):
 
     n_class = 3
     n_symbol = 43
-    n_rows = 10000
+    n_rows = 200
 
     sumTP = 0
     sumTPFP = 0
@@ -292,27 +292,21 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
     print(y_actual.shape)
 
     fscore = get_fscore(y_actual, y_pred)
-
-    y_pred = y_pred.tolist()
-    y_actual = y_actual.tolist()
-
-
-
-    print("y_pred")
-    print(y_pred)
-    print("y_actual")
-    print(y_actual)
-
-    print("fscore")
-    print("macro")
-    print(f1_score(y_actual, y_pred, average = "macro"))
-    print("micro")
-    print(f1_score(y_actual, y_pred, average = "micro"))
-    print("weighted")
-    print(f1_score(y_actual, y_pred, average = "weighted"))
-
-    print(classification_report(y_actual, y_pred))
+    print("fscore", fscore)
+    #y_pred = y_pred.tolist()
+    #y_actual = y_actual.tolist()
 
 
 
+
+    for i in range(0, 43):
+        print("fscore")
+        print("macro")
+        print(f1_score(y_actual[:,i], y_pred[:,i], average = "macro"))
+        print("micro")
+        print(f1_score(y_actual[:,i], y_pred[:,i], average = "micro"))
+        print("weighted")
+        print(f1_score(y_actual[:,i], y_pred[:,i], average = "weighted"))
+
+        print(classification_report(y_actual[i], y_pred[i]))
 

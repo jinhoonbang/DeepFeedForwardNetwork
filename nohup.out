@@ -181,3 +181,39 @@ Traceback (most recent call last):
   File "/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py", line 93, in unique_labels
     raise ValueError("Mix type of y not allowed, got types %s" % ys_types)
 ValueError: Mix type of y not allowed, got types {'binary', 'multilabel-sequences'}
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
+/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
+  DeprecationWarning)
