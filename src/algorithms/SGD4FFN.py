@@ -4,14 +4,57 @@ import timeit
 import numpy
 import theano
 import theano.tensor as T
+import math
 
 from src.configurations.FFN import FFN
 from sklearn.metrics import f1_score, classification_report
 
-# def get_fscore(y_actual, y_pred):
-#
-#
-#     return fscore
+def get_fscore(y_actual, y_pred):
+
+    n_class = 3
+    n_symbol = 43
+    n_rows = 10000
+
+    sumTP = 0
+    sumTPFP = 0
+    sumTPFN = 0
+    for s in range(0, n_symbol):
+        cur_y_actual = y_actual[:, s]
+        cur_y_pred = y_pred[:, s]
+
+        for c in range(0, n_class):
+            tp = 0
+            fp = 0
+            fn = 0
+            tn = 0
+            for i in range(0, n_rows):
+                if (cur_y_actual[i] == c and cur_y_pred[i] == c):
+                    tp += 1
+                elif (cur_y_actual[i] == c and cur_y_pred[i] != c):
+                    fn += 1
+                elif (cur_y_actual[i] != c and cur_y_pred[i] == c):
+                    fp += 1
+                elif (cur_y_actual[i] != c and cur_y_pred[i] != c):
+                    tn += 1
+
+            print(tp)
+            print(fn)
+            print(fp)
+            print(tn)
+
+            sumTP += tp
+            sumTPFP += tp + fp
+            sumTPFN += tp + fn
+
+    pi = sumTP/sumTPFP
+    p = sumTP/sumTPFN
+
+    #micro
+    fscore = (2 * pi * p) / (pi + p)
+    #macro
+    #fscore =
+
+    return fscore
 
 def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.00, L2_reg=0.0001, n_epochs=1000,
           batch_size=20):
@@ -245,8 +288,15 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
 
     y_actual = test_set_y.eval()
 
+    print(y_pred.shape)
+    print(y_actual.shape)
+
+    fscore = get_fscore(y_actual, y_pred)
+
     y_pred = y_pred.tolist()
     y_actual = y_actual.tolist()
+
+
 
     print("y_pred")
     print(y_pred)
