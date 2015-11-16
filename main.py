@@ -7,7 +7,6 @@ import theano
 import theano.tensor as T
 import numpy
 import glob
-import pandas as pd
 import numpy as np
 from src.algorithms.SGD4FFN import SGD4FFN as SGD4FFN
 import sys
@@ -37,9 +36,11 @@ def preprocessData(path):
     for file in path:
         files.append(file)
     files.sort()
-
-    dfLabel = pd.DataFrame(dtype='float64')
-    dfFeature = pd.DataFrame(dtype='float64')
+    #
+    # dfLabel = pd.DataFrame(dtype='float64')
+    # dfFeature = pd.DataFrame(dtype='float64')
+    label = []
+    feature = []
 
     for file in files:
         binary = np.fromfile(file, dtype='float64')
@@ -48,14 +49,30 @@ def preprocessData(path):
         binary=np.delete(binary,[0,1])
         binary=binary.reshape((numRow,numCol))
 
-        tempLabel=pd.DataFrame(binary[:,0])
-        tempFeature=pd.DataFrame(binary[:,1:])
-        dfLabel=pd.concat([dfLabel, tempLabel],axis=1)
-        dfFeature=pd.concat([dfFeature, tempFeature],axis=1)
+        label.append(binary[:,0])
+        feature.append(binary[:, 1:])
+        # tempLabel=pd.DataFrame(binary[:,0])
+        # tempFeature=pd.DataFrame(binary[:,1:])
+        # dfLabel=pd.concat([dfLabel, tempLabel],axis=1)
+        # dfFeature=pd.concat([dfFeature, tempFeature],axis=1)
 
-    label = dfLabel.tail(params['n_row']).as_matrix()
-    label = label+1
-    feature = dfFeature.tail(params['n_row']).as_matrix()
+
+    # label = dfLabel.tail(params['n_row']).as_matrix()
+    # label = label+1
+    # feature = dfFeature.tail(params['n_row']).as_matrix()
+
+
+    label = np.asarray(label)
+    feature = np.asarray(feature)
+
+    print("label", label.shape)
+    print("feature", feature.shape)
+
+    label = label.squeeze()
+    feature = feature.squeeze()
+
+    print("label", label.shape)
+    print("feature", feature.shape)
 
     label = label.astype('int32')
     feature = feature.astype('float64')
