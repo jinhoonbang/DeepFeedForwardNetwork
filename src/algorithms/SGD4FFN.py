@@ -13,7 +13,7 @@ def get_fscore(y_actual, y_pred):
 
     n_class = 3
     n_symbol = 43
-    n_rows = 200
+    n_rows = 10000
 
     sumTP = 0
     sumTPFP = 0
@@ -37,18 +37,13 @@ def get_fscore(y_actual, y_pred):
                 elif (cur_y_actual[i] != c and cur_y_pred[i] != c):
                     tn += 1
 
-            print(tp)
-            print(fn)
-            print(fp)
-            print(tn)
-
             sumTP += tp
             sumTPFP += tp + fp
             sumTPFN += tp + fn
 
     pi = sumTP/sumTPFP
     p = sumTP/sumTPFN
-
+    #macrof1score
     fscore = (2 * pi * p) / (pi + p)
     return fscore
 
