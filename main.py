@@ -58,9 +58,9 @@ def preprocessData(path):
         binary=np.delete(binary,[0,1])
         binary=binary.reshape((numRow,numCol))
         binary = binary[:params['n_row']]
-	print(binary)	
+        print(binary)
 	
-	label[:,index] = binary[:,0]
+        label[:,index] = binary[:,0]
         feature[:, col_index:col_index+numCol-1] = binary[:, 1:]
  
         col_index += numCol-1
