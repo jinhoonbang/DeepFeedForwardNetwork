@@ -1,179 +1,185 @@
+main.py:54: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  binary=binary.reshape((numRow,numCol))
+main.py:58: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  feature[:, col_index:col_index+numCol-1] = binary[:, 1:]
+main.py:73: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  feature = feature[:,:col_index]
+main.py:97: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_train = feature[:n_train]
+main.py:98: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_train = label[:n_train]
+main.py:100: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_valid = feature[n_train: n_train + n_valid]
+main.py:101: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_valid = label[n_train: n_train + n_valid]
+main.py:103: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_test = feature[n_train + n_valid:]
+main.py:104: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_test = label[n_train + n_valid:]
+main.py:54: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  binary=binary.reshape((numRow,numCol))
+main.py:58: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  feature[:, col_index:col_index+numCol-1] = binary[:, 1:]
+main.py:73: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  feature = feature[:,:col_index]
+main.py:97: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_train = feature[:n_train]
+main.py:98: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_train = label[:n_train]
+main.py:100: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_valid = feature[n_train: n_train + n_valid]
+main.py:101: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_valid = label[n_train: n_train + n_valid]
+main.py:103: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_test = feature[n_train + n_valid:]
+main.py:104: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_test = label[n_train + n_valid:]
+main.py:54: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  binary=binary.reshape((numRow,numCol))
+main.py:58: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  feature[:, col_index:col_index+numCol-1] = binary[:, 1:]
 Traceback (most recent call last):
-  File "main.py", line 137, in <module>
-    SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
-  File "/home/jbang/scripts/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 202, in SGD4FFN
-    print >> sys.stderr, ('The code for file ' +
-TypeError: unsupported operand type(s) for >>: 'builtin_function_or_method' and '_io.TextIOWrapper'
-Traceback (most recent call last):
-  File "main.py", line 137, in <module>
-    SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
-  File "/home/jbang/scripts/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 202, in SGD4FFN
-    print >> sys.stderr, ('The code for file ' +
-TypeError: unsupported operand type(s) for >>: 'builtin_function_or_method' and '_io.TextIOWrapper'
-Traceback (most recent call last):
-  File "main.py", line 137, in <module>
-    SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
-  File "/home/jbang/scripts/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 202, in SGD4FFN
-    print >> sys.stderr, ('The code for file ' +
-TypeError: unsupported operand type(s) for >>: 'builtin_function_or_method' and '_io.TextIOWrapper'
-Traceback (most recent call last):
-  File "main.py", line 137, in <module>
-    SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
-  File "/home/jbang/scripts/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 206, in SGD4FFN
-    print >> sys.stderr, ('The code for file ' +
-TypeError: unsupported operand type(s) for >>: 'builtin_function_or_method' and '_io.TextIOWrapper'
-Traceback (most recent call last):
-  File "main.py", line 137, in <module>
-    SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
-  File "/home/jbang/scripts/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 228, in SGD4FFN
-    print(classification_report(y_actual, y_pred))
-  File "/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/metrics/classification.py", line 1224, in classification_report
-    labels = unique_labels(y_true, y_pred)
-  File "/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py", line 93, in unique_labels
-    raise ValueError("Mix type of y not allowed, got types %s" % ys_types)
-ValueError: Mix type of y not allowed, got types {'multiclass-multioutput', 'multilabel-indicator'}
-Traceback (most recent call last):
-  File "main.py", line 137, in <module>
+  File "main.py", line 162, in <module>
     datasets = load_data(params['dataset'])
-  File "main.py", line 86, in load_data
+  File "main.py", line 113, in load_data
     feature, label = preprocessData(dataset)
-  File "main.py", line 57, in preprocessData
-    print(label)
-  File "/home/jbang/anaconda3/lib/python3.4/site-packages/numpy/core/numeric.py", line 1715, in array_str
-    return array2string(a, max_line_width, precision, suppress_small, ' ', "", str)
-  File "/home/jbang/anaconda3/lib/python3.4/site-packages/numpy/core/arrayprint.py", line 454, in array2string
-    separator, prefix, formatter=formatter)
-  File "/home/jbang/anaconda3/lib/python3.4/site-packages/numpy/core/arrayprint.py", line 328, in _array2string
-    _summaryEdgeItems, summary_insert)[:-1]
-  File "/home/jbang/anaconda3/lib/python3.4/site-packages/numpy/core/arrayprint.py", line 524, in _formatArray
-    s = s.rstrip() + sep.rstrip() + '\n'*max(rank-1, 1)
+  File "main.py", line 58, in preprocessData
+    feature[:, col_index:col_index+numCol-1] = binary[:, 1:]
 KeyboardInterrupt
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/metrics/classification.py:958: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
-  'precision', 'predicted', average, warn_for)
+main.py:54: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  binary=binary.reshape((numRow,numCol))
+main.py:58: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  feature[:, col_index:col_index+numCol-1] = binary[:, 1:]
+main.py:73: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  feature = feature[:,:col_index]
+main.py:97: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_train = feature[:n_train]
+main.py:98: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_train = label[:n_train]
+main.py:100: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_valid = feature[n_train: n_train + n_valid]
+main.py:101: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_valid = label[n_train: n_train + n_valid]
+main.py:103: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_test = feature[n_train + n_valid:]
+main.py:104: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_test = label[n_train + n_valid:]
 Traceback (most recent call last):
-  File "main.py", line 134, in <module>
-    datasets = load_data(params['dataset'])
-  File "main.py", line 83, in load_data
-    feature, label = preprocessData(dataset)
-  File "main.py", line 54, in preprocessData
-    print(label)
-ValueError: I/O operation on closed file.
-Traceback (most recent call last):
-  File "main.py", line 132, in <module>
+  File "main.py", line 163, in <module>
     SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
-  File "/home/jbang/scripts/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 50, in SGD4FFN
-    print('... building the model')
-ValueError: I/O operation on closed file.
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/metrics/classification.py:958: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
-  'precision', 'predicted', average, warn_for)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/metrics/classification.py:958: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
-  'precision', 'predicted', average, warn_for)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/metrics/classification.py:958: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
-  'precision', 'predicted', average, warn_for)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/metrics/classification.py:958: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
-  'precision', 'predicted', average, warn_for)
+  File "/home/dkl524/jbang/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 290, in SGD4FFN
+    fscore = get_fscore(y_actual, y_pred)
+  File "/home/dkl524/jbang/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 50, in get_fscore
+    fscore = (2 * pi * p) / (pi + p)
+ZeroDivisionError: integer division or modulo by zero
 Traceback (most recent call last):
-  File "main.py", line 12, in <module>
-    from src.algorithms.SGD4FFN import SGD4FFN as SGD4FFN
-  File "/home/jbang/scripts/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 8, in <module>
-    from src.configurations.FFN import FFN
-  File "/home/jbang/scripts/DeepFeedForwardNetwork/src/configurations/FFN.py", line 90
-    self.p_y_given_x = self.logRegressionLayer.p_y_given_x
-                                                         ^
-TabError: inconsistent use of tabs and spaces in indentation
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/metrics/classification.py:958: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
-  'precision', 'predicted', average, warn_for)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/metrics/classification.py:958: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
-  'precision', 'predicted', average, warn_for)
-/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/utils/multiclass.py:198: DeprecationWarning: Direct support for sequence of sequences multilabel representation will be unavailable from version 0.17. Use sklearn.preprocessing.MultiLabelBinarizer to convert to a label indicator representation.
-  DeprecationWarning)
-Traceback (most recent call last):
-  File "main.py", line 136, in <module>
+  File "main.py", line 163, in <module>
     SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
+  File "/home/dkl524/jbang/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 290, in SGD4FFN
+    fscore = get_fscore(y_actual, y_pred)
+  File "/home/dkl524/jbang/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 50, in get_fscore
+    fscore = (2 * pi * p) / (pi + p)
+ZeroDivisionError: integer division or modulo by zero
+main.py:54: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  binary=binary.reshape((numRow,numCol))
+main.py:58: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  feature[:, col_index:col_index+numCol-1] = binary[:, 1:]
+main.py:54: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  binary=binary.reshape((numRow,numCol))
+main.py:58: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  feature[:, col_index:col_index+numCol-1] = binary[:, 1:]
+main.py:73: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  feature = feature[:,:col_index]
+main.py:73: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  feature = feature[:,:col_index]
+main.py:97: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_train = feature[:n_train]
+main.py:98: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_train = label[:n_train]
+main.py:100: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_valid = feature[n_train: n_train + n_valid]
+main.py:101: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_valid = label[n_train: n_train + n_valid]
+main.py:103: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_test = feature[n_train + n_valid:]
+main.py:104: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_test = label[n_train + n_valid:]
+main.py:97: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_train = feature[:n_train]
+main.py:98: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_train = label[:n_train]
+main.py:100: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_valid = feature[n_train: n_train + n_valid]
+main.py:101: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_valid = label[n_train: n_train + n_valid]
+main.py:103: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_test = feature[n_train + n_valid:]
+main.py:104: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_test = label[n_train + n_valid:]
+main.py:54: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  binary=binary.reshape((numRow,numCol))
+main.py:58: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  feature[:, col_index:col_index+numCol-1] = binary[:, 1:]
+main.py:73: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  feature = feature[:,:col_index]
+main.py:97: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_train = feature[:n_train]
+main.py:98: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_train = label[:n_train]
+main.py:100: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_valid = feature[n_train: n_train + n_valid]
+main.py:101: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_valid = label[n_train: n_train + n_valid]
+main.py:103: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_test = feature[n_train + n_valid:]
+main.py:104: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_test = label[n_train + n_valid:]
+Traceback (most recent call last):
+  File "main.py", line 163, in <module>
+    SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
+  File "/home/dkl524/jbang/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 290, in SGD4FFN
+    fscore = get_fscore(y_actual, y_pred)
+  File "/home/dkl524/jbang/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 50, in get_fscore
+    fscore = (2 * pi * p) / (pi + p)
+ZeroDivisionError: integer division or modulo by zero
+Traceback (most recent call last):
+  File "main.py", line 163, in <module>
+    SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
+  File "/home/dkl524/jbang/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 290, in SGD4FFN
+    fscore = get_fscore(y_actual, y_pred)
+  File "/home/dkl524/jbang/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 50, in get_fscore
+    fscore = (2 * pi * p) / (pi + p)
+ZeroDivisionError: integer division or modulo by zero
+Traceback (most recent call last):
+  File "main.py", line 163, in <module>
+    SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
+  File "/home/dkl524/jbang/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 290, in SGD4FFN
+    fscore = get_fscore(y_actual, y_pred)
+  File "/home/dkl524/jbang/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 50, in get_fscore
+    fscore = (2 * pi * p) / (pi + p)
+ZeroDivisionError: integer division or modulo by zero
+main.py:54: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  binary=binary.reshape((numRow,numCol))
+main.py:58: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  feature[:, col_index:col_index+numCol-1] = binary[:, 1:]
+main.py:73: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  feature = feature[:,:col_index]
+main.py:97: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_train = feature[:n_train]
+main.py:98: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_train = label[:n_train]
+main.py:100: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_valid = feature[n_train: n_train + n_valid]
+main.py:101: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_valid = label[n_train: n_train + n_valid]
+main.py:103: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_test = feature[n_train + n_valid:]
+main.py:104: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_test = label[n_train + n_valid:]
+Traceback (most recent call last):
+  File "main.py", line 163, in <module>
+    SGD4FFN(datasets,params['hiddenLayers'],params['n_in'],params['n_out'],n_epochs=params['n_epochs'])
+<<<<<<< HEAD
   File "/home/jbang/scripts/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 246, in SGD4FFN
     print(classification_report(y_actual, y_pred))
   File "/home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/metrics/classification.py", line 1224, in classification_report
@@ -245,3 +251,28 @@ KeyboardInterrupt
   'precision', 'predicted', average, warn_for)
 /home/jbang/anaconda3/lib/python3.4/site-packages/sklearn/metrics/classification.py:958: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 in labels with no predicted samples.
   'precision', 'predicted', average, warn_for)
+=======
+  File "/home/dkl524/jbang/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 290, in SGD4FFN
+    fscore = get_fscore(y_actual, y_pred)
+  File "/home/dkl524/jbang/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 50, in get_fscore
+    fscore = (2 * pi * p) / (pi + p)
+ZeroDivisionError: integer division or modulo by zero
+main.py:54: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  binary=binary.reshape((numRow,numCol))
+main.py:58: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  feature[:, col_index:col_index+numCol-1] = binary[:, 1:]
+main.py:73: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  feature = feature[:,:col_index]
+main.py:97: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_train = feature[:n_train]
+main.py:98: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_train = label[:n_train]
+main.py:100: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_valid = feature[n_train: n_train + n_valid]
+main.py:101: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_valid = label[n_train: n_train + n_valid]
+main.py:103: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_test = feature[n_train + n_valid:]
+main.py:104: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_test = label[n_train + n_valid:]
+>>>>>>> 79579b48b2e041801ed808960d0b67a7fc14d9fc

@@ -5,9 +5,7 @@ import numpy
 import theano
 import theano.tensor as T
 import math
-
 from src.configurations.FFN import FFN
-from sklearn.metrics import f1_score, classification_report
 
 def get_fscore(y_actual, y_pred):
 
@@ -192,7 +190,7 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
 
     # early-stopping parameters
     patience = 100000
-    patience_increase = 10
+    patience_increase = 30
     #patience = 1000  # look as this many examples regardless
     # patience_increase = 2  # wait this much longer when a new best is
     # found
@@ -281,26 +279,42 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
 
     print(y_pred.shape)
     print(y_actual.shape)
-
+    
+    print("y_pred", y_pred)
+    print("y_actual", y_actual)
     fscore = get_fscore(y_actual, y_pred)
     print("fscore", fscore)
     #y_pred = y_pred.tolist()
     #y_actual = y_actual.tolist()
 
+#    microf1 = []
+#    macrof1 = []
+#    weightedf1 = []
+#    for i in range(0, 43):
+#        microf1.append(f1_score(y_actual[:,i], y_pred[:,i], average = "macro"))
+#        macrof1.append(f1_score(y_actual[:,i], y_pred[:,i], average = "micro"))
+#        weightedf1.append(f1_score(y_actual[:,i], y_pred[:,i], average = "weighted"))
 
-    microf1 = []
-    macrof1 = []
-    weightedf1 = []
-    for i in range(0, 43):
-        microf1.append(f1_score(y_actual[:,i], y_pred[:,i], average = "macro"))
-        macrof1.append(f1_score(y_actual[:,i], y_pred[:,i], average = "micro"))
-        weightedf1.append(f1_score(y_actual[:,i], y_pred[:,i], average = "weighted"))
+#    microf1 = sum(microf1)/len(microf1)
+#    macrof1 = sum(macrof1)/len(macrof1)
+#    weightedf1 = sum(weightedf1)/len(weightedf1)
 
-    microf1 = sum(microf1)/len(microf1)
-    macrof1 = sum(macrof1)/len(macrof1)
-    weightedf1 = sum(weightedf1)/len(weightedf1)
-
-    print("microf1", microf1)
-    print("macrof1", macrof1)
-    print("weighted1", weightedf1)
-
+#    print("microf1", microf1)
+#    print("macrof1", macrof1)
+#    print("weighted1", weightedf1)
+    #
+    # microf1 = []
+    # macrof1 = []
+    # weightedf1 = []
+    # for i in range(0, 43):
+    #     microf1.append(f1_score(y_actual[:,i], y_pred[:,i], average = "macro"))
+    #     macrof1.append(f1_score(y_actual[:,i], y_pred[:,i], average = "micro"))
+    #     weightedf1.append(f1_score(y_actual[:,i], y_pred[:,i], average = "weighted"))
+    #
+    # microf1 = sum(microf1)/len(microf1)
+    # macrof1 = sum(macrof1)/len(macrof1)
+    # weightedf1 = sum(weightedf1)/len(weightedf1)
+    #
+    # print("microf1", microf1)
+    # print("macrof1", macrof1)
+    # print("weighted1", weightedf1)
