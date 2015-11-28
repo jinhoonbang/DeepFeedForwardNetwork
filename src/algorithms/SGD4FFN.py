@@ -5,7 +5,6 @@ import numpy
 import theano
 import theano.tensor as T
 import math
-
 from src.configurations.FFN import FFN
 
 def get_fscore(y_actual, y_pred):
@@ -292,7 +291,6 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
     #y_pred = y_pred.tolist()
     #y_actual = y_actual.tolist()
 
-
 #    microf1 = []
 #    macrof1 = []
 #    weightedf1 = []
@@ -308,4 +306,19 @@ def SGD4FFN(datasets, layers_hidden, n_in, n_out, learning_rate=0.01, L1_reg=0.0
 #    print("microf1", microf1)
 #    print("macrof1", macrof1)
 #    print("weighted1", weightedf1)
-
+    #
+    # microf1 = []
+    # macrof1 = []
+    # weightedf1 = []
+    # for i in range(0, 43):
+    #     microf1.append(f1_score(y_actual[:,i], y_pred[:,i], average = "macro"))
+    #     macrof1.append(f1_score(y_actual[:,i], y_pred[:,i], average = "micro"))
+    #     weightedf1.append(f1_score(y_actual[:,i], y_pred[:,i], average = "weighted"))
+    #
+    # microf1 = sum(microf1)/len(microf1)
+    # macrof1 = sum(macrof1)/len(macrof1)
+    # weightedf1 = sum(weightedf1)/len(weightedf1)
+    #
+    # print("microf1", microf1)
+    # print("macrof1", macrof1)
+    # print("weighted1", weightedf1)

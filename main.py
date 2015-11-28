@@ -36,6 +36,7 @@ def preprocessData(path):
     for file in path:
         files.append(file)
     files.sort()
+
     # dfLabel = pd.DataFrame(dtype='float64')
     # dfFeature = pd.DataFrame(dtype='float64')
      
@@ -43,6 +44,12 @@ def preprocessData(path):
     feature = np.zeros((params['n_row'], 10000))
     index = 0
     col_index = 0
+    #
+    # dfLabel = pd.DataFrame(dtype='float64')
+    # dfFeature = pd.DataFrame(dtype='float64')
+    label = []
+    feature = []
+
     for file in files:
         binary = np.fromfile(file, dtype='float64')
         numRow=binary[0]
@@ -61,6 +68,9 @@ def preprocessData(path):
         index += 1
         #label.append(binary[:,0])
         #feature.append(binary[:, 1:])
+
+        label.append(binary[:,0])
+        feature.append(binary[:, 1:])
         # tempLabel=pd.DataFrame(binary[:,0])
         # tempFeature=pd.DataFrame(binary[:,1:])
         # dfLabel=pd.concat([dfLabel, tempLabel],axis=1)
@@ -75,6 +85,9 @@ def preprocessData(path):
     #label = np.array(label)
     #feature = np.array(feature)    
 
+    label = np.asarray(label)
+    feature = np.asarray(feature)
+
     print("label", label.shape)
     print("feature", feature.shape)
 
@@ -83,7 +96,6 @@ def preprocessData(path):
 
     print("label", label.shape)
     print("feature", feature.shape)
-   
     label = label.astype('int32')
     feature = feature.astype('float64')
 
