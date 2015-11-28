@@ -16,7 +16,6 @@ theano.config.optimizer = 'fast_compile'
 
 np.set_printoptions(threshold=30)
 
-<<<<<<< HEAD
 log = open('speed_test_ep50.log', 'w')
 sys.stdout = log
 
@@ -25,9 +24,9 @@ params = dict(
     hiddenLayers = [1000, 900, 800, 700],
     n_in = 0, #chosen after data is loaded
     n_out = 129, # number of classes
-    n_row = 50000,
-    batch_size = 240,
-    n_epochs = 50,
+    n_row = 500,
+    batch_size = 20,
+    n_epochs = 2,
     # with_projection = True, # applicable only with actOptimization
     # model = "plain" # actChoice or plain or actOptimization
 )
@@ -48,8 +47,6 @@ def preprocessData(path):
     #
     # dfLabel = pd.DataFrame(dtype='float64')
     # dfFeature = pd.DataFrame(dtype='float64')
-    label = []
-    feature = []
 
     for file in files:
         binary = np.fromfile(file, dtype='float64')
@@ -61,6 +58,7 @@ def preprocessData(path):
         binary=np.delete(binary,[0,1])
         binary=binary.reshape((numRow,numCol))
         binary = binary[:params['n_row']]
+	print(binary)	
 	
 	label[:,index] = binary[:,0]
         feature[:, col_index:col_index+numCol-1] = binary[:, 1:]
@@ -70,8 +68,6 @@ def preprocessData(path):
         #label.append(binary[:,0])
         #feature.append(binary[:, 1:])
 
-        label.append(binary[:,0])
-        feature.append(binary[:, 1:])
         # tempLabel=pd.DataFrame(binary[:,0])
         # tempFeature=pd.DataFrame(binary[:,1:])
         # dfLabel=pd.concat([dfLabel, tempLabel],axis=1)
@@ -82,12 +78,9 @@ def preprocessData(path):
     # label = label+1
     # feature = dfFeature.tail(params['n_row']).as_matrix()
     feature = feature[:,:col_index]    
-
+    label = label[:,0]
     #label = np.array(label)
     #feature = np.array(feature)    
-
-    label = np.asarray(label)
-    feature = np.asarray(feature)
 
     print("label", label.shape)
     print("feature", feature.shape)
