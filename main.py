@@ -7,7 +7,6 @@ import theano
 import theano.tensor as T
 import numpy
 import glob
-import pandas as pd
 import numpy as np
 from src.algorithms.SGD4FFN import SGD4FFN as SGD4FFN
 import sys
@@ -17,17 +16,17 @@ theano.config.optimizer = 'fast_compile'
 
 np.set_printoptions(threshold=30)
 
-log = open('5layer_ep_50.log', 'w')
+log = open('log/phi_test_run_bs_240_ep_50.log', 'w')
 sys.stdout = log
 
 params = dict(
-    dataset = glob.glob('/home/jbang/data/smallHybrid/*'),
-    hiddenLayers = [1000, 900, 800, 700, 600],
+    dataset = glob.glob('../Data/smallHybrid/*'),
+    hiddenLayers = [1000, 900, 800, 700],
     n_in = 0, #chosen after data is loaded
     n_out = 129, # number of classes
     n_row = 50000,
-    batch_size = 100,
-    n_epochs = 50,
+    batch_size = 240,
+    n_epochs = 50
     # with_projection = True, # applicable only with actOptimization
     # model = "plain" # actChoice or plain or actOptimization
 )
@@ -37,26 +36,54 @@ def preprocessData(path):
     for file in path:
         files.append(file)
     files.sort()
-
-    dfLabel = pd.DataFrame(dtype='float64')
-    dfFeature = pd.DataFrame(dtype='float64')
-
+    # dfLabel = pd.DataFrame(dtype='float64')
+    # dfFeature = pd.DataFrame(dtype='float64')
+     
+    label = np.zeros((params['n_row'], 43))
+    feature = np.zeros((params['n_row'], 10000))
+    index = 0
+    col_index = 0
     for file in files:
         binary = np.fromfile(file, dtype='float64')
         numRow=binary[0]
         numCol=binary[1]
+   
+        print("Num Row", numRow)
+        print("Num Col", numCol)
         binary=np.delete(binary,[0,1])
         binary=binary.reshape((numRow,numCol))
+        binary = binary[:params['n_row']]
+	
+	label[:,index] = binary[:,0]
+        feature[:, col_index:col_index+numCol-1] = binary[:, 1:]
+ 
+        col_index += numCol-1
+        index += 1
+        #label.append(binary[:,0])
+        #feature.append(binary[:, 1:])
+        # tempLabel=pd.DataFrame(binary[:,0])
+        # tempFeature=pd.DataFrame(binary[:,1:])
+        # dfLabel=pd.concat([dfLabel, tempLabel],axis=1)
+        # dfFeature=pd.concat([dfFeature, tempFeature],axis=1)
 
-        tempLabel=pd.DataFrame(binary[:,0])
-        tempFeature=pd.DataFrame(binary[:,1:])
-        dfLabel=pd.concat([dfLabel, tempLabel],axis=1)
-        dfFeature=pd.concat([dfFeature, tempFeature],axis=1)
 
-    label = dfLabel.tail(params['n_row']).as_matrix()
-    label = label+1
-    feature = dfFeature.tail(params['n_row']).as_matrix()
+    # label = dfLabel.tail(params['n_row']).as_matrix()
+    # label = label+1
+    # feature = dfFeature.tail(params['n_row']).as_matrix()
+    feature = feature[:,:col_index]    
 
+    #label = np.array(label)
+    #feature = np.array(feature)    
+
+    print("label", label.shape)
+    print("feature", feature.shape)
+
+    label = label.squeeze()
+    feature = feature.squeeze()
+
+    print("label", label.shape)
+    print("feature", feature.shape)
+   
     label = label.astype('int32')
     feature = feature.astype('float64')
 
