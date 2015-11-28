@@ -184,3 +184,21 @@ Traceback (most recent call last):
   File "/home/dkl524/jbang/DeepFeedForwardNetwork/src/algorithms/SGD4FFN.py", line 50, in get_fscore
     fscore = (2 * pi * p) / (pi + p)
 ZeroDivisionError: integer division or modulo by zero
+main.py:54: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  binary=binary.reshape((numRow,numCol))
+main.py:58: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  feature[:, col_index:col_index+numCol-1] = binary[:, 1:]
+main.py:73: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  feature = feature[:,:col_index]
+main.py:97: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_train = feature[:n_train]
+main.py:98: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_train = label[:n_train]
+main.py:100: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_valid = feature[n_train: n_train + n_valid]
+main.py:101: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_valid = label[n_train: n_train + n_valid]
+main.py:103: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  x_test = feature[n_train + n_valid:]
+main.py:104: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  y_test = label[n_train + n_valid:]

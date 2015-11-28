@@ -16,7 +16,7 @@ theano.config.optimizer = 'fast_compile'
 
 np.set_printoptions(threshold=30)
 
-log = open('log/phi_test_run_bs_240_ep_50.log', 'w')
+log = open('log/phi_test_run_no_vm_10.log', 'w')
 sys.stdout = log
 
 params = dict(
@@ -26,7 +26,7 @@ params = dict(
     n_out = 129, # number of classes
     n_row = 50000,
     batch_size = 240,
-    n_epochs = 50
+    n_epochs = 10
     # with_projection = True, # applicable only with actOptimization
     # model = "plain" # actChoice or plain or actOptimization
 )
